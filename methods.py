@@ -6,7 +6,7 @@ def word_filter(string):
     result = []                     # 以list装载数据
     words = jieba.posseg.cut(string)
     for word, flag in words:
-        if 'u' == flag:
+        if 'u' in flag:
             pass
         elif 'x' == flag:
             pass
