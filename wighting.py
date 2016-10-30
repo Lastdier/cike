@@ -47,7 +47,6 @@ for line in train_data:
     # 单视角
     if view_count == 1:
         occur_cache = {0}
-        words_list.remove(view_list[0][0])      # 去除视角词，这里的视角词有可能与分词结果不同，导致错误
         for word in words_list:
             occur_cache.add(word)
         occur_cache.remove(0)
@@ -91,7 +90,6 @@ for line in train_data:
             for view in view_list:
                 if view[0] in word_cache:
                     this_emotion = view[1]
-                    word_cache.remove(view[0])
                     break
             if this_emotion == 'pos':
                 for word in word_cache:
@@ -118,13 +116,16 @@ for line in train_data:
 bdc = {}
 for word in word_occur:
     result = 0
-    p_pos = word_pos_count.get(word, 0)/doc_pos_count
-    p_neg = word_neg_count.get(word, 0)/doc_neg_count
-    p_neu = word_neu_count.get(word, 0)/doc_neu_count
+    p_pos = word_pos_count.get(word, 0) / doc_pos_count
+    p_neg = word_neg_count.get(word, 0) / doc_neg_count
+    p_neu = word_neu_count.get(word, 0) / doc_neu_count
     s = p_neg + p_pos + p_neu
-    result += (p_pos/s) * math.log2((p_pos/s))
-    result += (p_neg / s) * math.log2((p_neg / s))
-    result += (p_neu / s) * math.log2((p_neu / s))
+    if not p_pos == 0:
+        result += (p_pos / s) * math.log2((p_pos / s))
+    if not p_neg == 0:
+        result += (p_neg / s) * math.log2((p_neg / s))
+    if not p_neu == 0:
+        result += (p_neu / s) * math.log2((p_neu / s))
     result /= math.log2(3)
     result += 1
     bdc[word] = result
@@ -136,7 +137,7 @@ for word in word_pos_count:
     total_pos_words += word_pos_count.get(word)
 for word in word_occur:
     pos_tf[word] = pos_tf.get(word, 0)
-    pos_tf[word] = word_pos_count.get(word) / total_pos_words
+    pos_tf[word] = word_pos_count.get(word, 0) / total_pos_words
 
 neg_tf = {}
 total_neg_words = 0
@@ -144,9 +145,20 @@ for word in word_neg_count:
     total_neg_words += word_neg_count.get(word)
 for word in word_occur:
     neg_tf[word] = neg_tf.get(word, 0)
-    neg_tf[word] = word_pos_count.get(word) / total_neg_words
+    neg_tf[word] = word_neg_count.get(word, 0) / total_neg_words
 
 # +++++++++++++++++++++++++++++++++++++计算idf+++++++++++++++++++++++++++
 idf = {}
 for word in word_occur:
-    idf[word] = math.log10(word_occur.get(word)/(doc_neg_count + doc_neu_count + doc_pos_count))
+    idf[word] = math.log10((doc_neg_count + doc_neu_count + doc_pos_count)/ word_occur.get(word))
+
+# 输出
+path = open('result/wight.csv', 'w', encoding='utf-8')
+path.write('word\tpos_tf\tneg_tf\tidf\tbdc\tpos_tf_idf\tneg_tf_idf\tpos_tf_bdc\tneg_tf_bdc\n')
+for word in word_occur:
+    # tf做了乘100000的处理
+    path.write('%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\n' %
+               (word, pos_tf[word]*1e5, neg_tf[word]*1e5, idf[word], bdc[word],
+                pos_tf[word]*idf[word]*1e5, neg_tf[word]*idf[word]*1e5,
+                pos_tf[word]*bdc[word]*1e5, neg_tf[word]*bdc[word]*1e5))
+path.close()
