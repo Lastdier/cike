@@ -2,24 +2,12 @@ from methods import *
 import math
 
 
-def create_training_set(dict_file, k, emotion):
+def create_training_set(dict_name, k, emotion, num_of_train):
     result_X = []         # 结果
     result_Y = []         # 分类结果
 
     # 加载字典
-    my_dict = open('data/' + dict_file, encoding='utf-8')
-    data = my_dict.readlines()
-    my_dict.close()
-
-    features = []
-    count = 1
-    for line in data:
-        if count > k:
-            break
-        l1 = line.strip()
-        this_line = l1.split('\t')
-        features.append([this_line[0], this_line[1]])
-        count += 1
+    features = get_features(dict_name, k)
 
     # 加载label
     label_ref = [[] for i in range(28172)]        # 用list保存label，训练集评论最大id是28171
@@ -44,9 +32,14 @@ def create_training_set(dict_file, k, emotion):
     train = open('data/Train.csv', encoding='utf-8')
     train_data = train.readlines()
     train.close()
+    line_count = 1
     for line in train_data:
+        if line_count > num_of_train:
+            break
         line = line.strip()
         content = line.split('\t')
+        if not len(content) == 2:
+            continue
         comment_id = content[0]
         comment = content[1]
         try:
@@ -78,27 +71,41 @@ def create_training_set(dict_file, k, emotion):
                 foo += 1
 
             divide_index = []  # 计算出分隔点的下标
-            for i in range(len(view_index) - 1):
-                divide_index.append(math.ceil((view_index[i] + view_index[i + 1]) / 2))
+            for I in range(len(view_index) - 1):
+                divide_index.append(math.ceil((view_index[I] + view_index[I + 1]) / 2))
 
             # 判断每一段应该是哪个情感，然后统计
             word_cache = []
             words_list_pointer = 0  # 记录处理到评论中的哪个词了
-            for i in divide_index:
+            x_cache = {}
+            y_cache = {}
+            for I in divide_index:
                 this_emotion = 'neu'
-                while words_list_pointer <= i:
+                while words_list_pointer <= I:
                     word_cache.append(words_list[words_list_pointer])
                     words_list_pointer += 1
                 for view in view_list:
                     if view[0] in word_cache:
+                        this_view = view[0]
                         this_emotion = view[1]
                         break
-                if this_emotion == emotion:
-                    result_X.append(search_features_and_wight(words_list, features))
-                    result_Y.append(1)
+                if x_cache.get(this_view) is None:
+                    x_cache[this_view] = [search_features_and_wight(word_cache, features)]
                 else:
-                    result_X.append(search_features_and_wight(words_list, features))
-                    result_Y.append(0)
+                    x_cache[this_view].append(search_features_and_wight(word_cache, features))
+                if this_emotion == emotion:
+                    y_cache[this_view] = 1
+                else:
+                    y_cache[this_view] = 0
                 word_cache = []
+            for view in x_cache:
+                result_cache = [0.] * k
+                for j in range(k):
+                    for vector in x_cache[view]:
+                        result_cache[j] += vector[j]
+                result_X.append(result_cache)
+                result_Y.append(y_cache[view])
+
+        line_count += 1
 
     return result_X, result_Y

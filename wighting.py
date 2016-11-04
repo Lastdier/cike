@@ -15,7 +15,7 @@ label.close()
 for line in label_data:
     line = line.strip()
     content = line.split('\t')
-    if len(content) != 3:
+    if not len(content) == 3:
         continue
     label_id = content[0]
     label_view = content[1]
@@ -33,6 +33,8 @@ train.close()
 for line in train_data:
     line = line.strip()
     content = line.split('\t')
+    if not len(content) == 2:
+        continue
     comment_id = content[0]
     comment = content[1]
     try:
@@ -78,6 +80,7 @@ for line in train_data:
         divide_index = []                       # 计算出分隔点的下标
         for i in range(len(view_index)-1):
             divide_index.append(math.ceil((view_index[i]+view_index[i+1])/2))
+        divide_index.append(len(words_list)-1)
 
         # 判断每一段应该是哪个情感，然后统计
         word_cache = []
@@ -150,7 +153,7 @@ for word in word_occur:
 # +++++++++++++++++++++++++++++++++++++计算idf+++++++++++++++++++++++++++
 idf = {}
 for word in word_occur:
-    idf[word] = math.log10((doc_neg_count + doc_neu_count + doc_pos_count)/ word_occur.get(word))
+    idf[word] = math.log10((doc_neg_count + doc_neu_count + doc_pos_count) / word_occur.get(word))
 
 # 输出
 path = open('result/wight.csv', 'w', encoding='utf-8')
