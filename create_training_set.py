@@ -17,7 +17,7 @@ def create_training_set(dict_name, k, emotion, num_of_train):
     for line in label_data:
         line = line.strip()
         content = line.split('\t')
-        if len(content) != 3:
+        if not len(content) == 3:
             continue
         label_id = content[0]
         label_view = content[1]
