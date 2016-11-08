@@ -3,7 +3,7 @@ from sklearn import preprocessing
 from create_training_set import *
 import numpy as np
 
-
+#lala
 TOTAL_NUMBER_OF_TRAIN = 7538
 NUM_OF_TRAIN = 5000
 FEATURES_FILE = 'pos_dict.csv'
