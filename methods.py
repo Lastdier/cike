@@ -101,8 +101,6 @@ def word_filter(string):
     for word,flag in words:
         if 'u' in flag:
             pass
-        elif 'x' == flag:
-            pass
         elif 'p' == flag:
             pass
         elif 'q' == flag:
