@@ -4,12 +4,12 @@ from create_training_set import *
 import numpy as np
 
 
-TOTAL_NUMBER_OF_TRAIN = 7538
-NUM_OF_TRAIN = 5000
+TOTAL_NUMBER_OF_TRAIN = 14533
+NUM_OF_TRAIN = 14534
 FEATURES_FILE = 'pos_dict.csv'
-TEST_FILE = 'Train.csv'
+TEST_FILE = 'Test.csv'
 OUTPUT_FILE = 'predict_pos.csv'
-NUM_OF_FEATURES = 3000
+NUM_OF_FEATURES = 10101
 CLASS_EMOTION = 'pos'
 
 # 初始化分类器
@@ -23,6 +23,7 @@ clf.fit(train_x, train_y)
 # 将测试对象转化为向量
 features = get_features(FEATURES_FILE, NUM_OF_FEATURES)
 
+# 加载视角词典
 view_file = open('data/View.csv', encoding='utf-8')
 view_data = view_file.readlines()
 view_file.close()
@@ -34,6 +35,14 @@ for line in view_data:
         continue
     views_list.append(l2[1])
 
+# 加载补充视角词典
+appended_view = open('data/view_1107.csv', encoding='utf-8')
+appended_view_data = appended_view.readlines()
+appended_view.close()
+for line in appended_view_data:
+    l1 = line.strip()
+    views_list.append(l1)
+
 test_file = open(('data/'+TEST_FILE), encoding='utf-8')
 test_data = test_file.readlines()
 test_file.close()
@@ -41,8 +50,6 @@ result_file = open(('result/'+OUTPUT_FILE), 'w', encoding='utf-8')
 line_count = 0
 for line in test_data:
     line_count += 1
-    if not line_count > NUM_OF_TRAIN:
-        continue
     l1 = line.strip()
     l2 = l1.split('\t')
     if not len(l2) == 2:
