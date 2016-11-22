@@ -21,7 +21,8 @@ for l in words_that_should_not_be_divided:
     jieba.suggest_freq(l, True)
 
 view_list = []
-result = []
+result = {''}                 # set
+result.remove('')
 
 view_file = open('data/View.csv', encoding='utf-8')
 view_data = view_file.readlines()
@@ -63,12 +64,49 @@ for line in test_data:
                     cache = word
                     state = True
         else:
-            if flag == 'x':
+            if flag == 'eng':
                 cache = cache + word
                 continue
-            elif flag == 'eng':
-                cache = cache + word
-                continue
+            elif flag == 'x':
+                if word == ',':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '、':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '。':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '，':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '/':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '：':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '<':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '>':
+                    result.add(cache)
+                    state = False
+                    continue
+                elif word == '》':
+                    result.add(cache)
+                    state = False
+                    continue
+                else:
+                    cache = cache + word
+                    continue
             is_view = False
             for view in view_list:
                 if word == view:
@@ -77,7 +115,7 @@ for line in test_data:
             if is_view:
                 cache = cache + word
             else:
-                result.append(cache)
+                result.add(cache)
                 state = False
 
 new_file = open('result/new_view.csv', 'w', encoding='utf-8')

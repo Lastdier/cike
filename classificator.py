@@ -27,21 +27,29 @@ features = get_features(FEATURES_FILE, NUM_OF_FEATURES)
 view_file = open('data/View.csv', encoding='utf-8')
 view_data = view_file.readlines()
 view_file.close()
-views_list = []
+views_list = {''}
+views_list.remove('')
 for line in view_data:
     l1 = line.strip()
     l2 = l1.split('\t')
     if not len(l2) == 2:
         continue
-    views_list.append(l2[1])
+    views_list.add(l2[1])
 
 # 加载补充视角词典
-appended_view = open('data/view_1107.csv', encoding='utf-8')
-appended_view_data = appended_view.readlines()
-appended_view.close()
-for line in appended_view_data:
+appended_view_1 = open('data/view_1107.csv', encoding='utf-8')
+appended_view_data_1 = appended_view_1.readlines()
+appended_view_1.close()
+for line in appended_view_data_1:
     l1 = line.strip()
-    views_list.append(l1)
+    views_list.add(l1)
+
+appended_view_2 = open('data/new_view.csv', encoding='utf-8')
+appended_view_data_2 = appended_view_2.readlines()
+appended_view_2.close()
+for line in appended_view_data_2:
+    l1 = line.strip()
+    views_list.add(l1)
 
 test_file = open(('data/'+TEST_FILE), encoding='utf-8')
 test_data = test_file.readlines()

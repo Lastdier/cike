@@ -43,7 +43,10 @@ def create_training_set(dict_name, k, emotion, num_of_train):
         comment = content[1]
 
         words_list = word_filter(comment)
-        view_list = label_ref[comment_id]
+        if label_ref.get(comment_id) is None:
+            continue
+        else:
+            view_list = label_ref[comment_id]
         view_count = len(view_list)  # 读取视角数
 
         # 单视角

@@ -18,87 +18,84 @@ for i in dict_data:
     i1 = i.strip()
     i2 = i1.split(' ')
     words_that_should_not_be_divided.add(i2[0])
+
+addition_file_1 = open('data/view_1107.csv', encoding='utf-8')
+addition_data_1 = addition_file_1.readlines()
+addition_file_1.close()
+for i in addition_data_1:
+    i1 = i.strip()
+    words_that_should_not_be_divided.add(i1)
+
+addition_file_2 = open('data/new_view.csv', encoding='utf-8')
+addition_data_2 = addition_file_2.readlines()
+addition_file_2.close()
+for i in addition_data_2:
+    i1 = i.strip()
+    words_that_should_not_be_divided.add(i1)
+
 for l in words_that_should_not_be_divided:
     jieba.suggest_freq(l, True)
 
-#将句子中有歧义的词，带单位的数字删除
-def preProcess(str):
-    #处理带有单位的数字
-    pattern=r'\d+[N牛m米马力r元公斤T年万辆月日]|[\[][\S]*[\]]|DQ\d+|\d+-\d+|TSI\d+'
-    for word in re.findall(pattern,str):
-        str=str.replace(word,'')
-    #处理产生歧义的词
+
+# 将句子中有歧义的词，带单位的数字删除
+def preProcess(this_str):
+    # 处理产生歧义的词
     p = r".*(现代.*传统).*|.*(传统.*现代).*|.*(现代.*时尚).*|.*(时尚.*现代).*|.*(现代.*科技).*|.*(科技.*现代).*|.*(音乐.*现代).*|.*(现代.*音乐).*|.*(现代.*经典).*|.*(经典.*现代).*|.*(现代.*绅士).*|.*(绅士.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*服务).*|.*(服务.*现代).*.*(现代.*中国).*|.*(中国.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*农业).*|.*(农业.*现代).*|.*(现代.*教育).*|.*(教育.*现代).*|.*(现代.*美).*|.*(美.*现代).*|.*(现代.*人).*|.*(人.*现代).*"
-    if(len(re.findall(p,str))>0):
-        str=str.replace('现代','')
-    p = r".*(330.*速派).*|.*(330.*帕萨特).*|.*(帕萨特.*330).*|.*(速派.*330).*"
-    if (len(re.findall(p, str)) > 0):
-        str = str.replace('330', '')
-    #车型词和品牌词一起出现
-    p = r".*(上汽大众.途安L).*|.*(途安L.上汽大众).*"
-    if (len(re.findall(p, str)) > 0):
-        str = str.replace('上汽大众', '')
+    if len(re.findall(p, this_str)) > 0:
+        this_str = this_str.replace('现代', '')
     lists=['汽车','狗狗Polo','大火中的Polo','1.4TEA211','长安宝宝','迈腾全国猪价资讯','XDS','Cross Lavida','Der Yeti in Berlin','Yak Yeti酒店','别克制','高尔夫度假酒店','','']
-    #现代出现了557次，然后有很多会导致歧义！
-    xiandai=['现代消费者','更现代','期待现代','现代学徒','现代奥运会','现代企业','现代露天剧场','现代风格','现代化','现代人','现代龙泉青','现代生活','既现代','融入现代','组成现代','现代文化','现代文明','现代交通安全','现代五项队','现代职业教育','现代豪华','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','回现代']
-    #大众出现了300+次，然后有很多会导致歧义！
-    dazhong=['大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI']
-    str=replace(str,lists)
-    str =replace(str,xiandai)
-    str =replace(str,dazhong)
-    str=str.replace('全新帕萨特','帕萨特')
-    str=str.replace('新帕萨特','帕萨特')
-    str = str.replace('小夏利', '夏利')
-    str = str.replace('一汽吉林4S店', '一汽')
-    str = str.replace('比速腾', '速腾')
-    str = str.replace('进口大众尚酷DSG', '大众尚酷DSG')
-    return str
+    # 现代出现了557次，然后有很多会导致歧义！
+    xiandai = ['现代消费者','更现代','期待现代','现代学徒','现代奥运会','现代企业','现代露天剧场','现代风格','现代化','现代人','现代龙泉青','现代生活','既现代','融入现代','组成现代','现代文化','现代文明','现代交通安全','现代五项队','现代职业教育','现代豪华','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','回现代']
+    # 大众出现了300+次，然后有很多会导致歧义！
+    dazhong = ['大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI']
+    this_str = replace(this_str, lists)
+    this_str = replace(this_str, xiandai)
+    this_str = replace(this_str, dazhong)
+    this_str = this_str.replace('全新帕萨特', '帕萨特')
+    this_str = this_str.replace('新帕萨特', '帕萨特')
+    this_str = this_str.replace('小夏利', '夏利')
+    this_str = this_str.replace('一汽吉林4S店', '一汽')
+    this_str = this_str.replace('比速腾', '速腾')
+    this_str = this_str.replace('进口大众尚酷DSG', '大众尚酷DSG')
+    return this_str
 
-#删除同义词
-def delete_words(list):
-    if ('帕萨特'in list and 'Passat' in list):
-        list.remove('Passat')
-    if ('帕萨特'in list and '帕萨特B1' in list):
-        list.remove('帕萨特')
-    if ('上汽大众斯柯达'in list and 'Kodiaq' in list ):
-        list.remove('Kodiaq')
-    if ('上汽大众斯柯达' in list and '上汽斯柯达' in list):
-        list.remove('上汽斯柯达')
-    if ('上汽大众斯柯达' in list and '斯柯达' in list):
-        list.remove('斯柯达')
-    if ('上汽大众途安L' in list and '途安L' in list):
-        list.remove('上汽大众途安L')
-    return list
 
-#删除句子中会产生歧义的词，比如现代化，可能会被是被为视角词;现代
-def replace(str,lists):
+# 删除句子中会产生歧义的词，比如现代化，可能会被是被为视角词;现代
+def replace(this_str, lists):
     for word in lists:
-        if(str.__contains__(word)==True):
-            str=str.replace(word,'')
-    return str
+        if word in this_str:
+            this_str = this_str.replace(word, '')
+    return this_str
 
-#j加载特殊视角词表
+
+# j加载特殊视角词表
 def load_table(source):
-    file=open(source, encoding='utf-8').readlines()
-    view=[]
+    file = open(source, encoding='utf-8').readlines()
+    view = []
     for line in file:
         line = line.strip()
         view.append(line)
     return view
 
+
 # 删除不需要的词，将剩余的词转换为list
 def word_filter(string):
-    result = []                     # 以list装载数据
-    string= preProcess(string)
-    path = 'data/SpecialView.csv'
-    SpecialView = load_table(path)
-    # 第一遍先找出特殊的视角词，并且返回不含特殊视角词的句子
-    for spcialview in SpecialView:
-        if (string.__contains__(spcialview) == True):
-            result.append(spcialview)
-            string= string.replace(spcialview, '')
+    cache = {}
+    result = []                             # 以list装载数据
+    string = preProcess(string)
+    path = 'data/SpecialView.csv'           # 这个文件里保存分词前要识别的视角词
+    new_view = load_table(path)
+    marker_set = ['☢', '☣', '☤', '☥', '☦', '☧', '☨', '☩', '☪', '☫', '☬', '☭', '☮', '☯', '☰', '☱', '☲', '☳', '☴', '☵', '☶', '☷', '☸']              # 用来标记视角的占位符
+
+    pointer = 0
+    for view in new_view:
+        if view in string:
+            cache[marker_set[pointer]] = view
+            string = string.replace(view, marker_set[pointer])             # 先识别分词器无法区分的视角，再用特殊标记标记出来
+            pointer += 1
     words = jieba.posseg.cut(string)
-    for word,flag in words:
+
+    for word, flag in words:
         if 'u' in flag:
             pass
         elif 'p' == flag:
@@ -107,10 +104,12 @@ def word_filter(string):
             pass
         elif 'm' == flag:
             pass
+        elif word in marker_set:
+            result.append(cache[word])
         else:
             result.append(word)
-    result = delete_words(result)
     return result
+
 
 def search_features_and_wight(word_list, features_list):
     num_of_features = len(features_list)
@@ -120,6 +119,7 @@ def search_features_and_wight(word_list, features_list):
             if fea[0] == word:
                 result[features_list.index(fea)] += float(fea[1])
     return result
+
 
 def get_features(dict_name, k):
     # 加载字典

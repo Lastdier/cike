@@ -22,7 +22,7 @@ for line in neg_data:
 pos_file = open('result/predict_pos.csv', encoding='utf-8')
 pos_data = pos_file.readlines()
 pos_file.close()
-for line in neg_data:
+for line in pos_data:
     l1 = line.strip()
     content = l1.split('\t')
     if not len(content) == 3:
