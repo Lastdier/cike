@@ -6,7 +6,7 @@ word_pos_count = {}                                 # 每个词在正面中出�
 word_neu_count = {}                                 # 每个词在中性中出现的次数
 word_occur = {}                                     # 每个词在多少个文本中出现，用于计算idf
 doc_pos_count, doc_neg_count, doc_neu_count = 0, 0, 0     # 文本的情感频数
-label_ref = [[] for i in range(28172)]        # 用list保存label，训练集评论最大id是28171
+label_ref = {}                                      # 字典保存label
 
 # 读取训练集输出
 label = open('data/Label.csv', encoding='utf-8')
@@ -20,11 +20,10 @@ for line in label_data:
     label_id = content[0]
     label_view = content[1]
     label_emotion = content[2]
-    try:
-        id_num = int(label_id)
-    except:
-        continue
-    label_ref[id_num].append([label_view, label_emotion])  # label_ref[id][视角][0]是视角名称，label_ref[id][视角][1]是判断结果
+    if label_ref.get(label_id) is None:
+        label_ref[label_id] = [[label_view, label_emotion]]
+    else:
+        label_ref[label_id].append([label_view, label_emotion])  # label_ref[id][视角][0]是视角名称，label_ref[id][视角][1]是判断结果
 
 # 读取训练集输入
 train = open('data/Train.csv', encoding='utf-8')
@@ -37,13 +36,12 @@ for line in train_data:
         continue
     comment_id = content[0]
     comment = content[1]
-    try:
-        id_num = int(comment_id)
-    except:
-        continue
 # +++++++++++++++++++++++++++++++统计部分++++++++++++++++++++++++++++++++
     words_list = word_filter(comment)
-    view_list = label_ref[id_num]
+    if label_ref.get(comment_id) is None:
+        continue
+    else:
+        view_list = label_ref[comment_id]
     view_count = len(view_list)                 # 读取视角数
 
     # 单视角

@@ -10,7 +10,7 @@ def create_training_set(dict_name, k, emotion, num_of_train):
     features = get_features(dict_name, k)
 
     # 加载label
-    label_ref = [[] for i in range(28172)]        # 用list保存label，训练集评论最大id是28171
+    label_ref = {}
     label = open('data/Label.csv', encoding='utf-8')
     label_data = label.readlines()
     label.close()
@@ -22,11 +22,10 @@ def create_training_set(dict_name, k, emotion, num_of_train):
         label_id = content[0]
         label_view = content[1]
         label_emotion = content[2]
-        try:
-            id_num = int(label_id)
-        except:
-            continue
-        label_ref[id_num].append([label_view, label_emotion])  # label_ref[id][视角][0]是视角名称，label_ref[id][视角][1]是判断结果
+        if label_ref.get(label_id) is None:
+            label_ref[label_id] = [[label_view, label_emotion]]
+        else:
+            label_ref[label_id].append([label_view, label_emotion])
 
     # 加载评论
     train = open('data/Train.csv', encoding='utf-8')
@@ -42,13 +41,9 @@ def create_training_set(dict_name, k, emotion, num_of_train):
             continue
         comment_id = content[0]
         comment = content[1]
-        try:
-            id_num = int(comment_id)
-        except:
-            continue
 
         words_list = word_filter(comment)
-        view_list = label_ref[id_num]
+        view_list = label_ref[comment_id]
         view_count = len(view_list)  # 读取视角数
 
         # 单视角

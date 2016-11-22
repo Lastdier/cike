@@ -1,5 +1,5 @@
-r = open('result/neg_dict.csv', encoding='gbk')
-w = open('data/neg_dict.csv', 'w', encoding='utf-8')
+r = open('result/pos_dict.csv', encoding='gbk')
+w = open('data/pos_dict.csv', 'w', encoding='utf-8')
 all_data = r.readlines()
 for line in all_data:
     d1 = line.strip()

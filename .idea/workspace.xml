@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/SpecialView.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/new_view.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/view_1107.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/find_more_view.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/filtered_wight.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/find_motion_by_view.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/neg_dict.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/pos_dict.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/predict_neg.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/predict_pos.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/result.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/wight.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classificator.py" afterPath="$PROJECT_DIR$/classificator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/convert_dict.py" afterPath="$PROJECT_DIR$/convert_dict.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_training_set.py" afterPath="$PROJECT_DIR$/create_training_set.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Label.csv" afterPath="$PROJECT_DIR$/data/Label.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Label_test.csv" afterPath="$PROJECT_DIR$/data/Label_test.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Test.csv" afterPath="$PROJECT_DIR$/data/Test.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Train.csv" afterPath="$PROJECT_DIR$/data/Train.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/View.csv" afterPath="$PROJECT_DIR$/data/View.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/neg_dict.csv" afterPath="$PROJECT_DIR$/data/neg_dict.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/pos_dict.csv" afterPath="$PROJECT_DIR$/data/pos_dict.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/merge.py" afterPath="$PROJECT_DIR$/merge.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/methods.py" afterPath="$PROJECT_DIR$/methods.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wighting.py" afterPath="$PROJECT_DIR$/wighting.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/data/my_dict.csv" afterPath="$PROJECT_DIR$/data/NormalViewdict.csv" />
     </list>
     <ignored path="cike.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +64,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Label.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/Label.csv">
+      <file leaf-file-name="pos_dict.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/pos_dict.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4557">
+              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classificator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classificator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+              <folding>
+                <element signature="e#13#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="find_motion_by_view.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/result/find_motion_by_view.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -47,20 +96,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classificator.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classificator.py">
+      <file leaf-file-name="convert_dict.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/convert_dict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_training_set.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/create_training_set.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-297">
+              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="methods.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/methods.py">
+      <file leaf-file-name="filter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="find_more_view.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/find_more_view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-714">
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="merge.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/merge.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -82,6 +161,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="chauncy &lt;1921540224@qq.com&gt;" />
         <option value="1921540224@qq.com" />
         <option value="chauncy" />
         <option value="zhucharles" />
@@ -145,6 +225,7 @@
         <option value="$PROJECT_DIR$/src/getMotion.py" />
         <option value="$PROJECT_DIR$/src/PreProcess.py" />
         <option value="$PROJECT_DIR$/classificator.py" />
+        <option value="$PROJECT_DIR$/result/find_motion_by_view.py" />
       </list>
     </option>
   </component>
@@ -155,9 +236,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1370" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -184,6 +266,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,19 +295,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cike-guoshuang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cike-guoshuang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="result" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cike-guoshuang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cike-guoshuang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,6 +605,28 @@
       <option name="presentableId" value="Default" />
       <updated>1477025947721</updated>
     </task>
+    <task id="LOCAL-00001" summary="Delete View.csv">
+      <created>1478609610927</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1478609610927</updated>
+    </task>
+    <task id="LOCAL-00002" summary="测试分支提交是否成功">
+      <created>1478609795560</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1478609795560</updated>
+    </task>
+    <task id="LOCAL-00003" summary="测试分支提交是否成功">
+      <created>1478611993279</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1478611993279</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -507,28 +639,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1691285" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16251831" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21895425" sideWeight="0.69742817" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32692307" sideWeight="0.5029542" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32692307" sideWeight="0.4970458" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17693523" sideWeight="0.6420205" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17693523" sideWeight="0.3579795" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21955128" sideWeight="0.4970458" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53846157" sideWeight="0.71331316" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18137255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38235295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53846157" sideWeight="0.71331316" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38235295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,7 +694,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试提交" />
+    <MESSAGE value="Delete View.csv" />
+    <MESSAGE value="测试分支提交是否成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试分支提交是否成功" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -571,18 +706,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/dict.txt" />
-    <entry file="file://$PROJECT_DIR$/data/ladict.csv" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/jieba-0.38-py3.5.egg/jieba/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/data/TrainLeftMCopy.csv" />
-    <entry file="file://$PROJECT_DIR$/data/testLeftS.csv" />
-    <entry file="file://$PROJECT_DIR$/data/trainLeftS.csv" />
-    <entry file="file://$PROJECT_DIR$/data/Labell.csv" />
-    <entry file="file://$PROJECT_DIR$/data/userdict.csv" />
-    <entry file="file://$PROJECT_DIR$/data/motion_neg.txt" />
-    <entry file="file://$PROJECT_DIR$/data/负面评价词语（中文）.txt" />
-    <entry file="file://$PROJECT_DIR$/data/程度级别词语（中文）.txt" />
-    <entry file="file://$PROJECT_DIR$/data/正面评价词语（中文）.txt" />
     <entry file="file://$PROJECT_DIR$/data/主张词语（中文）.txt" />
     <entry file="file://$PROJECT_DIR$/data/motion_talbe.csv" />
     <entry file="file://$PROJECT_DIR$/data/motion_pos.txt" />
@@ -591,7 +714,6 @@
     <entry file="file://$PROJECT_DIR$/data/r.csv" />
     <entry file="file://$PROJECT_DIR$/data/trainlabel.csv" />
     <entry file="file://$PROJECT_DIR$/data/train_wrong_data.csv" />
-    <entry file="file://$PROJECT_DIR$/data/View.csv" />
     <entry file="file://$PROJECT_DIR$/data/LabelY.csv" />
     <entry file="file://$PROJECT_DIR$/data/word.csv" />
     <entry file="file://$PROJECT_DIR$/src/test_Motion.py" />
@@ -625,10 +747,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_training_set.py">
+    <entry file="file://$PROJECT_DIR$/train.py" />
+    <entry file="file://$PROJECT_DIR$/data/new_view.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-819">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/View.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/view_1107.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/neg_dict.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/SpecialView.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/pos_dict.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4557">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_training_set.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_more_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/merge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wighting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="162" column="58" selection-start-line="162" selection-start-column="58" selection-end-line="162" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -640,14 +856,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py" />
+    <entry file="file://$PROJECT_DIR$/convert_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classificator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#13#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/find_motion_by_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,20 +1,19 @@
+# coding=GBK
 from sklearn import svm
 from sklearn import preprocessing
 from create_training_set import *
 import numpy as np
 
-#lala
-#ä¸ºä»€ä¹ˆæ²¡æœ‰æäº¤æˆåŠŸ
-#å•¦å•¦å•¦
-TOTAL_NUMBER_OF_TRAIN = 7538
-NUM_OF_TRAIN = 5000
+
+TOTAL_NUMBER_OF_TRAIN = 14533
+NUM_OF_TRAIN = 14534
 FEATURES_FILE = 'pos_dict.csv'
-TEST_FILE = 'Train.csv'
+TEST_FILE = 'Test.csv'
 OUTPUT_FILE = 'predict_pos.csv'
-NUM_OF_FEATURES = 3000
+NUM_OF_FEATURES = 10101
 CLASS_EMOTION = 'pos'
 
-# åˆå§‹åŒ–åˆ†ç±»å™¨
+# ³õÊ¼»¯·ÖÀàÆ÷
 clf = svm.LinearSVC()
 
 train_x, train_y = create_training_set(FEATURES_FILE, NUM_OF_FEATURES, CLASS_EMOTION, NUM_OF_TRAIN)
@@ -22,9 +21,10 @@ train_x = preprocessing.normalize(train_x)
 clf.fit(train_x, train_y)
 
 
-# å°†æµ‹è¯•å¯¹è±¡è½¬åŒ–ä¸ºå‘é‡
+# ½«²âÊÔ¶ÔÏó×ª»¯ÎªÏòÁ¿
 features = get_features(FEATURES_FILE, NUM_OF_FEATURES)
 
+# ¼ÓÔØÊÓ½Ç´Êµä
 view_file = open('data/View.csv', encoding='utf-8')
 view_data = view_file.readlines()
 view_file.close()
@@ -36,6 +36,14 @@ for line in view_data:
         continue
     views_list.append(l2[1])
 
+# ¼ÓÔØ²¹³äÊÓ½Ç´Êµä
+appended_view = open('data/view_1107.csv', encoding='utf-8')
+appended_view_data = appended_view.readlines()
+appended_view.close()
+for line in appended_view_data:
+    l1 = line.strip()
+    views_list.append(l1)
+
 test_file = open(('data/'+TEST_FILE), encoding='utf-8')
 test_data = test_file.readlines()
 test_file.close()
@@ -43,24 +51,22 @@ result_file = open(('result/'+OUTPUT_FILE), 'w', encoding='utf-8')
 line_count = 0
 for line in test_data:
     line_count += 1
-    if not line_count > NUM_OF_TRAIN:
-        continue
     l1 = line.strip()
     l2 = l1.split('\t')
     if not len(l2) == 2:
         continue
     comment_id = l2[0]
     comment = l2[1]
-    # è¯†åˆ«è§†è§’
+    # Ê¶±ğÊÓ½Ç
     words_list = word_filter(comment)
-    words_list_pointer = 0  # è®°å½•è¯è¡¨ä¸‹æ ‡
-    views_index = []  # è®°å½•è§†è§’è¯å‡ºç°çš„ä¸‹æ ‡
+    words_list_pointer = 0  # ¼ÇÂ¼´Ê±íÏÂ±ê
+    views_index = []  # ¼ÇÂ¼ÊÓ½Ç´Ê³öÏÖµÄÏÂ±ê
     for word in words_list:
         for view in views_list:
             if word == view:
                 views_index.append(words_list_pointer)
         words_list_pointer += 1
-    view_count = len(views_index)  # æ­¤è¯„è®ºè§†è§’æ•°
+    view_count = len(views_index)  # ´ËÆÀÂÛÊÓ½ÇÊı
     view_set = {-1}
     for index in views_index:
         view_set.add(words_list[index])
@@ -68,8 +74,8 @@ for line in test_data:
     if len(view_set) == 1:
         view_count = 1
 
-    # å¤„ç†æ–‡æœ¬å¹¶æµ‹è¯•
-    # å•è§†è§’
+    # ´¦ÀíÎÄ±¾²¢²âÊÔ
+    # µ¥ÊÓ½Ç
     if view_count == 1:
         test_x = search_features_and_wight(words_list, features)
         test_x = [test_x]
@@ -77,7 +83,7 @@ for line in test_data:
         test_y = clf.predict(test_x)
         result_file.write('%s\t%s\t%d\n' % (comment_id, words_list[views_index[0]], test_y[0]))
 
-    # å¤šè§†è§’
+    # ¶àÊÓ½Ç
     if view_count > 1:
         result = {}
         divide_points = []
@@ -91,8 +97,8 @@ for line in test_data:
                 words_cache.append(words_list[words_list_pointer])
                 words_list_pointer += 1
             test_x = search_features_and_wight(words_cache, features)
-            num_of_view = divide_points.index(point)                          # ç¬¬å‡ ä¸ªè§†è§’
-            this_view = words_list[views_index[num_of_view]]                  # è¿™ä¸ªè§†è§’çš„åå­—
+            num_of_view = divide_points.index(point)                          # µÚ¼¸¸öÊÓ½Ç
+            this_view = words_list[views_index[num_of_view]]                  # Õâ¸öÊÓ½ÇµÄÃû×Ö
             if result.get(this_view) is None:
                 result[this_view] = [test_x]
             else:
