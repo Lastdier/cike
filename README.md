@@ -7,3 +7,8 @@ create_training_set 根据词典将训练集构造成向量/////////
 classificator 训练SVM并预测测试数据/////////
 merge 将挑选正面的结果和挑选负面的结果组合/////////
 check_file 检验结果的F1值
+
+修改:不要view_1107中的大部分含有"汽车"的视角词
+
+
+
