@@ -118,6 +118,7 @@ for line in test_data:
     comment = l2[1]
     # 识别视角
     views = getViews(comment, NormaleViews, SpecialViews)
+    '''
     # 处理比较句
     if (comment.__contains__('？') and comment.__contains__('怎么')):
         for comview in views:
@@ -132,6 +133,7 @@ for line in test_data:
     for comview in comviews:
         result_file.write('%s\t%s\t%d\n' % (comment_id, comview, 0))
         views.remove(comview)
+    '''
     lines = re.split('。|,|，|:|：|；|\n', l2[1])
     for i in range(0, len(views)):
         sentence = getSentence(views[i], views, lines)

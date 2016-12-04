@@ -299,9 +299,11 @@ def getStopWords(filename,StopName,NormaleViews,SpecialViews):
             #不要的;x u p q m p
             if(stopWords.get(word) is None and (flag=='m' or flag=='x' or flag=='p' or flag=='q' or flag=='u' or re.match('^[0-9a-zA-Z]+$',word))):
                 stopWords[word]=1
+    list=['ssss','fashion','dreamcar']
     stopWords=list(stopWords)
     for stopword in stopWords:
-        pathName.write(stopword+'\n')
+        if(stopword not in list):
+            pathName.write(stopword+'\n')
 
 NormaleViews=load_table('data/NormalViews.csv',1)
 SpecialViews = load_dict('data/SpecialViews.csv')
