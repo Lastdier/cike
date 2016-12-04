@@ -1,5 +1,4 @@
 '''
-from snownlp import SnowNLP
 label_file = open('data/Train.csv', encoding='utf-8')
 label_data = label_file.readlines()
 label_file.close()
@@ -20,7 +19,6 @@ for line in label_data:
     line=line.split('\t')
     if (pos.get(line[0]) is not None):
         result.write(line[0] + '\t' +line[2]+'\t'+pos[line[0]])
-'''
 from sklearn.ensemble import GradientBoostingClassifier
 # !usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -161,3 +159,5 @@ if __name__ == '__main__':
 
     if model_save_file != None:
         pickle.dump(model_save, open(model_save_file, 'wb'))
+'''
+from snownlp import SnowNLP
