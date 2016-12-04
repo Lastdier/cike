@@ -4,10 +4,11 @@
 from methods import *
 import math
 import re
-import jieba
+import jieba.posseg
 import time
+from snownlp import SnowNLP
 
-#得到一个完整的基础视角词表
+#得到一个完整的基础视角词表,输入是AllViews:由两个Label.csv中获取的视角词+拓展的视角词组成，输出是所有视角词组成的字典
 def getFirstView(labelname):
     # 存储从Label.csv中获得的视角词
     views={}
@@ -30,7 +31,7 @@ def getFirstView(labelname):
             views[content]=1
     return views
 
-#针对英文的：k2k3k4子集是视角词的删除
+#删除一些拓展出来的视角词，主要针对英文，比如拓展的视角词为:k2k3k4，但是实际上k2、k3、k4本身是视角词，所以k2k3k4属于误判
 def removewSpecilaView(str,SpecialViews):
     temp=str
     SpecialView=list(SpecialViews)
@@ -43,6 +44,7 @@ def removewSpecilaView(str,SpecialViews):
     return temp
 
 #根据现有的视角词后面出现英文，数字，-,·来扩展视角词
+#基本拓展完毕，除了视角词纯粹是英文/数字的还没有做，其他的完成了。目前的功能就只是把一些不要的视角词删了，然后输出到Views.csv
 def getSecondView(views,testname,ViewPathname):
     newviews = {}
     View_First = open(ViewPathname, 'w', encoding='utf-8')
@@ -95,13 +97,15 @@ def getSecondView(views,testname,ViewPathname):
                                  print(newview)
                                  newview = ''
     '''
+    #去除重复的视角词
     views=list(set(list(views)))
+    #列表按长度降序排序
     views.sort(key=lambda x:len(x),reverse=True)
     for view in views:
         if(view!='发现' and view!='阳光' and view !='标志' and view!='雷凌双擎'):
             View_First.write(view+'\n')
 
-#根据视角词表是否含有中文,是否含有数字分为普通视角词表和特殊视角词表
+#根据视角词表是否会被jeiba切开分为NormalViws：会被切开+SpecilaViews:不会被切开
 def SegViews(ViewPathname,NormalName,SpecialName,):
     normalview=open(NormalName,'w',encoding='utf-8')
     specialview = open(SpecialName, 'w', encoding='utf-8')
@@ -285,6 +289,10 @@ def getStopWords(filename,StopName,NormaleViews,SpecialViews):
     train_data = train.readlines()
     stopWords={}
     pathName = open(StopName, 'w', encoding='utf-8')
+    ImportangWords = {}
+    important_words = ['ssss', 'fashion', 'dreamcar']
+    for word in important_words:
+        ImportangWords[word]=1
     for line in train_data:
         line = line.strip()
         line = line.split('\t')
@@ -299,43 +307,65 @@ def getStopWords(filename,StopName,NormaleViews,SpecialViews):
             #不要的;x u p q m p
             if(stopWords.get(word) is None and (flag=='m' or flag=='x' or flag=='p' or flag=='q' or flag=='u' or re.match('^[0-9a-zA-Z]+$',word))):
                 stopWords[word]=1
-    list=['ssss','fashion','dreamcar']
-    stopWords=list(stopWords)
-    for stopword in stopWords:
-        if(stopword not in list):
-            pathName.write(stopword+'\n')
+                if (ImportangWords.get(word) is None):
+                    pathName.write(word + '\n')
 
+#利用snownlp,得到数据集中每个句子的情感为积极的概率，输出文件格式为：句子ID+句子情感为积极的概率
+def get_SentenceSentiment(filename,pathname):
+    label_file = open(filename, encoding='utf-8')
+    label_data = label_file.readlines()
+    label_file.close()
+    result = open(pathname, 'w', encoding='utf-8')
+    for line in label_data:
+        line = line.strip()
+        line = line.split('\t')
+        s = SnowNLP(line[1])
+        result.write('%s\t%.8f\n' % (line[0], s.sentiments))
+
+#得到情感词典
 NormaleViews=load_table('data/NormalViews.csv',1)
 SpecialViews = load_dict('data/SpecialViews.csv')
-filename='data/Train.csv'
-StopName='data/Stopwords.csv'
+#输入的文件名称
+trainname='data/Train.csv'
 labelname='data/Label.csv'
+testname='data/Test.csv'
+#输出的停用词表的文件名称
+StopName='data/Test_Stopwords.csv'
+#输出的情感词典的文件名称
 pospath='data/pos_dict.csv'
 negpath='data/neg_dict.csv'
+#各种视角词文件名称
 Allviews='data/AllViews.csv'
-viewsname='data/new_view.csv'
 ViewPathname='data/Views.csv'
 NormalName='data/NormalViews.csv'
 SpecialName='data/SpecialViews.csv'
-testname='data/Test.csv'
-itime=time.time()
-#getStopWords(filename,StopName,NormaleViews,SpecialViews)
-etime=time.time()
-print('得到停用词表总共用时:'+str(etime-itime))
-stopWords = load_dict(StopName)
-itime=time.time()
-getDict(filename,labelname,stopWords,pospath,negpath)
-etime=time.time()
-print('得到情感词典总共用时:'+str(etime-itime))
+#句子的情感概率值文件名称
+SentenceName='data/TrainSentiment.csv'
+#主要是得到视角词，输入是AllViews,输出是Views+SpecialViews+NormalViews
 iTime=time.time()
-views=getFirstView(Allviews)
+#views=getFirstView(Allviews)
 eTime=time.time()
 print("得到基础视角表总共用时：" + str(eTime - iTime))
 iTime=time.time()
-getSecondView(views,testname,ViewPathname)
+#getSecondView(views,testname,ViewPathname)
 eTime=time.time()
 print("得到总视角表总共用时：" + str(eTime - iTime))
 iTime=time.time()
 #SegViews(ViewPathname,NormalName,SpecialName,)
 eTime=time.time()
 print("拆分总视角表总共用时：" + str(eTime - iTime))
+#得到停用词表，输入是数据集+SpecialViews+NormalViews，输入是StopWords.csv
+itime=time.time()
+getStopWords(trainname,StopName,NormaleViews,SpecialViews)
+etime=time.time()
+print('得到停用词表总共用时:'+str(etime-itime))
+#得到情感词典，输入是文件名称+停用词表，输出是积极情感词典+消极情感词典
+stopWords = load_dict(StopName)
+itime=time.time()
+#getDict(filename,labelname,stopWords,pospath,negpath)
+etime=time.time()
+print('得到情感词典总共用时:'+str(etime-itime))
+iTime=time.time()
+#get_SentenceSentiment(trainname,SentenceName)
+eTime=time.time()
+print("得到句子的情感概率值总共用时：" + str(eTime - iTime))
