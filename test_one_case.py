@@ -161,3 +161,13 @@ if __name__ == '__main__':
         pickle.dump(model_save, open(model_save_file, 'wb'))
 '''
 from snownlp import SnowNLP
+label_file = open('data/Train.csv', encoding='utf-8')
+label_data = label_file.readlines()
+label_file.close()
+pos={}
+result = open('data/TrainSentiment.csv','w' ,encoding='utf-8')
+for line in label_data:
+    l1 = line.strip()
+    line=line.split('\t')
+    s=SnowNLP(line[1])
+    result.write(line[0]+'\t'+s.sentiments)

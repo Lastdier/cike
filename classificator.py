@@ -92,15 +92,15 @@ SpecialViews = load_dict('data/SpecialViews.csv')
 StopWords = load_dict('data/StopWords.csv')
 
 # 初始化分类器
-#clf = svm.LinearSVC()
-model = GradientBoostingClassifier()
+clf = svm.LinearSVC()
+#model = GradientBoostingClassifier()
 # 将测试对象转化为向量
 features = get_features(FEATURES_FILE, NUM_OF_FEATURES)
 
 train_x, train_y = create_training_set(features, CLASS_EMOTION, NUM_OF_TRAIN)
 train_x = preprocessing.normalize(train_x)
-#clf.fit(train_x, train_y)
-model.fit(train_x, train_y)
+clf.fit(train_x, train_y)
+#model.fit(train_x, train_y)
 t=time.time()
 print('训练完成共用时'+str(t-itime))
 test_file = open(('data/'+TEST_FILE), encoding='utf-8')
@@ -139,7 +139,7 @@ for line in test_data:
         test_x = search_features_and_wight(words_list, features)
         test_x = [test_x]
         test_x = preprocessing.normalize(test_x)
-        test_y = model.predict(test_x)
+        test_y = clf.predict(test_x)
         result_file.write('%s\t%s\t%d\n' % (comment_id, views[i],test_y[0]))
 result_file.close()
 t=time.time()

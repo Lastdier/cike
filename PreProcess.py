@@ -6,12 +6,9 @@ import math
 import re
 import jieba
 import time
-jieba.suggest_freq('系',True)
 
 #得到一个完整的基础视角词表
 def getFirstView(labelname):
-    #存储view_1107中的视角词
-    temp_views=[]
     # 存储从Label.csv中获得的视角词
     views={}
     lists=['208','335','560','630','730','3008','5008']
@@ -49,6 +46,7 @@ def removewSpecilaView(str,SpecialViews):
 def getSecondView(views,testname,ViewPathname):
     newviews = {}
     View_First = open(ViewPathname, 'w', encoding='utf-8')
+    '''
     label_file = open(testname,encoding='utf-8')
     label_data = label_file.readlines()
     label_file.close()
@@ -96,6 +94,7 @@ def getSecondView(views,testname,ViewPathname):
                                  #views[newview] = 1
                                  print(newview)
                                  newview = ''
+    '''
     views=list(set(list(views)))
     views.sort(key=lambda x:len(x),reverse=True)
     for view in views:
@@ -303,11 +302,11 @@ def getStopWords(filename,StopName,NormaleViews,SpecialViews):
 
 NormaleViews=load_table('data/NormalViews.csv',1)
 SpecialViews = load_dict('data/SpecialViews.csv')
-filename='data/sentence.csv'
+filename='data/Train.csv'
 StopName='data/Stopwords.csv'
-labelname='data/newLabel.csv'
-pospath='data/new_pos_dict.csv'
-negpath='data/new_neg_dict.csv'
+labelname='data/Label.csv'
+pospath='data/pos_dict.csv'
+negpath='data/neg_dict.csv'
 Allviews='data/AllViews.csv'
 viewsname='data/new_view.csv'
 ViewPathname='data/Views.csv'

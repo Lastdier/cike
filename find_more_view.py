@@ -7,6 +7,7 @@ view_file.close()
 for line in view_data:
     l1 = line.strip()
     view_list[l1]=1
+
 #得到合并的视角词,比如大众-奥迪
 def getMergeViews(views,view_list,line):
     mergeviews=[]
