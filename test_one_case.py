@@ -1,4 +1,61 @@
 '''
+#根据现有的视角词后面出现英文，数字，-,·来扩展视角词
+def getSecondView(views,testname,ViewPathname):
+    newviews = {}
+    View_First = open(ViewPathname, 'w', encoding='utf-8')
+    '''
+    label_file = open(testname,encoding='utf-8')
+    label_data = label_file.readlines()
+    label_file.close()
+    for line in label_data:
+        line = line.strip()
+        line = line.split('\t')
+        content = line[1]
+        temp = 0
+        count = 0
+        newview = ''
+        # 视角词在最后会提取不到，加。
+        content = content + '。'
+        pattern = r'\d+[款|年|版|台|月|日|周|寸|缸|辆|副|轮|键|T]|\d+:\d+|\d\.\d|\d+连冠|\d+公里|\d+小时|http:\s+|201\d|\d+km/h|[\d+|\d+.\d+|.\d+]+[t|起|万|元]'
+        lists = ['4s', 'pk', 'performance', '1-','1,6']
+        for word in lists:
+            content = content.replace(word, '')
+        for word in re.findall(pattern, content):
+            content = content.replace(word, '')
+        for word in jieba.cut(content):
+            count += 1
+            if (views.get(word) is not None):
+                if (newview == ''):
+                    temp = count
+                    newview = word
+                    continue
+            else:
+                if (newview != '') and (count - temp) == 1:
+                    if re.match('^[0-9a-zA-Z]+$', word):
+                        word = removewSpecilaView(word, views)
+                    if (re.match('^[0-9a-zA-Z]+$', word) and word.isdigit()==False) or word == '-' or word == '系' or word == '·' or word == ' ' or word=='－' or word=='\0xa':
+                        temp = count
+                        newview += word
+                    else:
+                        if re.match('^[\w]+[-|·]+$', newview):
+                            newview = newview.replace('-', '')
+                        if re.match('^[\w]+[·]+$', newview):
+                            newview = newview.replace('·', '')
+                        if re.match('^[\w]+[ ]+$', newview):
+                            newview = newview.replace(' ', '')
+                        newview = newview.replace('http', '')
+                        if (views.get(newview) is None and newviews.get(newview) is None and newview.isdigit() == False and newview.isalpha() == False):
+                            newviews[newview] = 1
+                            if(newview.__contains__('-') or newview.__contains__('·') or newview.__contains__(' ') or newview.__contains__('\0xa')):
+                                #View_First.write(newview + '\n')
+                                 #views[newview] = 1
+                                 print(newview)
+                                 newview = ''
+    views=list(set(list(views)))
+    views.sort(key=lambda x:len(x),reverse=True)
+    for view in views:
+        if(view!='发现' and view!='阳光' and view !='标志' and view!='雷凌双擎'):
+            View_First.write(view+'\n')
 label_file = open('data/Train.csv', encoding='utf-8')
 label_data = label_file.readlines()
 label_file.close()
@@ -170,4 +227,4 @@ for line in label_data:
     l1 = line.strip()
     line=line.split('\t')
     s=SnowNLP(line[1])
-    result.write(line[0]+'\t'+s.sentiments)
+    result.write('%s\t%.8f\n' % (line[1],s.sentiments))
