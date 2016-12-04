@@ -76,9 +76,9 @@ for line in result_data:
     else:
         fp += 1
         #if (Train_data[comment_id].__contains__('然而') or Train_data[comment_id].__contains__('但是')):
-        if(view_emotion=='pos' and check_data[comment_id][comment_view]=='neu' ):
-            word_list = word_filter(Train_data[comment_id], StopWords)
-            wrong_data.write(Train_data[comment_id] +' 分词结果'+listTostring(word_list) +'\n')
+        #if(view_emotion=='pos' and check_data[comment_id][comment_view]=='neu' ):
+            #word_list = word_filter(Train_data[comment_id], StopWords)
+            #wrong_data.write(Train_data[comment_id] +' 分词结果'+listTostring(word_list) +'\n')
             #wrong_data.write(comment_id+'\t' + '实际情感:'+check_data[comment_id][comment_view]+' 预测情感:'+view_emotion+'\t'+Train_data[comment_id] + '\n')
     comment_views_checked[comment_id] -= 1
 
@@ -87,7 +87,7 @@ for comment_id in comment_views_checked:
         pass
         #wrong_data.write(comment_id + ' 实际视角为：' +Label_data[comment_id] + ' 预测视角为：'+Train_result_data[comment_id]+ ' 句子：' + Train_data[comment_id] + '\n')
     elif (comment_views_checked[comment_id] != 0 and Train_result_data.get(comment_id) is None):
-        pass
+        pass;
         #wrong_data.write(comment_id + ' 实际视角为：' + Label_data[comment_id]+ ' 句子：' +Train_data[comment_id] + '\n')
     fn1 += comment_views_checked[comment_id]
 
