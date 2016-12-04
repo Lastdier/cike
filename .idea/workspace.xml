@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreProcess.py" afterPath="$PROJECT_DIR$/PreProcess.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_file.py" afterPath="$PROJECT_DIR$/check_file.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_one_case.py" afterPath="$PROJECT_DIR$/test_one_case.py" />
     </list>
     <ignored path="cike.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -610,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480835709247</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="更新">
+      <created>1480839937456</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1480839937456</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -680,7 +684,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="T" />
     <MESSAGE value="测试本地更新~" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试本地更新~" />
+    <MESSAGE value="更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
