@@ -102,13 +102,11 @@ for line in result_data:
     comment_views_checked[comment_id] -= 1
 
 for comment_id in comment_views_checked:
-    '''
     if(comment_views_checked[comment_id] !=0 and Train_result_data.get(comment_id) is not None):
         wrong_data.write(comment_id + ' 实际视角为：' +Label_data[comment_id] + ' 预测视角为：'+Train_result_data[comment_id]+ ' 句子：' + Train_data[comment_id] + '\n')
     elif (comment_views_checked[comment_id] != 0 and Train_result_data.get(comment_id) is None):
         pass
         #wrong_data.write(comment_id + ' 实际视角为：' + Label_data[comment_id]+ ' 句子：' +Train_data[comment_id] + '\n')
-    '''
     fn1 += comment_views_checked[comment_id]
 
 print('正确的情感分析数：'+str(tp))

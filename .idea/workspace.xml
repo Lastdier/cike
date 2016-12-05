@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_file.py" afterPath="$PROJECT_DIR$/check_file.py" />
     </list>
     <ignored path="cike.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,21 +43,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="check_file.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="check_file.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="133" column="3" selection-start-line="133" selection-start-column="3" selection-end-line="133" selection-end-column="3" />
+            <state relative-caret-position="184">
+              <caret line="108" column="19" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classificator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="classificator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classificator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="142" column="25" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="25" />
+            <state relative-caret-position="430">
+              <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -217,7 +218,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -652,7 +653,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480915766964</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="删除部分规则">
+      <created>1480915972328</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1480915972328</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -976,21 +984,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/check_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="133" column="3" selection-start-line="133" selection-start-column="3" selection-end-line="133" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classificator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="142" column="25" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="25" />
+        <state relative-caret-position="430">
+          <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="108" column="19" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
