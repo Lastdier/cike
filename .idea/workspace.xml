@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/create_training_set.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreProcess.py" afterPath="$PROJECT_DIR$/PreProcess.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_file.py" afterPath="$PROJECT_DIR$/check_file.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classificator.py" afterPath="$PROJECT_DIR$/classificator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/AllViews.csv" afterPath="$PROJECT_DIR$/data/AllViews.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Label.csv" afterPath="$PROJECT_DIR$/data/Label.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/NormalViews.csv" afterPath="$PROJECT_DIR$/data/NormalViews.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/SpecialViews.csv" afterPath="$PROJECT_DIR$/data/SpecialViews.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Test_Stopwords.csv" afterPath="$PROJECT_DIR$/data/Test_Stopwords.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Views.csv" afterPath="$PROJECT_DIR$/data/Views.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/neg_dict.csv" afterPath="$PROJECT_DIR$/data/neg_dict.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/pos_dict.csv" afterPath="$PROJECT_DIR$/data/pos_dict.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filter_result.py" afterPath="$PROJECT_DIR$/filter_result.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/merge.py" afterPath="$PROJECT_DIR$/merge.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/methods.py" afterPath="$PROJECT_DIR$/methods.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/filted_testresult.csv" afterPath="$PROJECT_DIR$/result/filted_testresult.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/predict_neg.csv" afterPath="$PROJECT_DIR$/result/predict_neg.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/predict_pos.csv" afterPath="$PROJECT_DIR$/result/predict_pos.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/result.csv" afterPath="$PROJECT_DIR$/result/result.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_one_case.py" afterPath="$PROJECT_DIR$/test_one_case.py" />
     </list>
     <ignored path="cike.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +23,7 @@
     <SUITE FILE_PATH="coverage/cike_guoshuang$test_one_case.coverage" NAME="test_one_case Coverage Results" MODIFIED="1480910397983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cike$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1477578596312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/cike_guoshuang$filter_result.coverage" NAME="filter_result Coverage Results" MODIFIED="1480902526786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/cike_guoshuang$merge.coverage" NAME="merge Coverage Results" MODIFIED="1480913102537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$merge.coverage" NAME="merge Coverage Results" MODIFIED="1480915571283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cike$test.coverage" NAME="test Coverage Results" MODIFIED="1477659911357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$test_Motion.coverage" NAME="test_Motion Coverage Results" MODIFIED="1477638729975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$t.coverage" NAME="t Coverage Results" MODIFIED="1477390942056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
@@ -52,7 +31,7 @@
     <SUITE FILE_PATH="coverage/cike$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1477659971949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$PreProcess__1_.coverage" NAME="PreProcess (1) Coverage Results" MODIFIED="1477486312396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$t__1_.coverage" NAME="t (1) Coverage Results" MODIFIED="1477486552393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/cike_guoshuang$check_file.coverage" NAME="check_file Coverage Results" MODIFIED="1480913106641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$check_file.coverage" NAME="check_file Coverage Results" MODIFIED="1480915578879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -63,21 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="check_file.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/check_file.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="classificator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classificator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
+            <state relative-caret-position="297">
+              <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -225,6 +194,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="result" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cike_guoshuang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cike_guoshuang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -238,7 +221,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -652,7 +635,21 @@
       <option name="project" value="LOCAL" />
       <updated>1480840252009</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="删除部分规则">
+      <created>1480915462615</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1480915462615</updated>
+    </task>
+    <task id="LOCAL-00012" summary="删除部分规则">
+      <created>1480915639914</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1480915639914</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -670,7 +667,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21895425" sideWeight="0.69742817" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22058824" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -723,7 +720,8 @@
     <MESSAGE value="T" />
     <MESSAGE value="测试本地更新~" />
     <MESSAGE value="更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新" />
+    <MESSAGE value="删除部分规则" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除部分规则" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -949,14 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/NormalViews.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="637" column="7" selection-start-line="637" selection-start-column="6" selection-end-line="637" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/TestTrain.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -970,23 +960,31 @@
         <state relative-caret-position="106">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/check_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        <state relative-caret-position="283">
+          <caret line="124" column="3" selection-start-line="124" selection-start-column="3" selection-end-line="124" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/NormalViews.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63524">
+          <caret line="647" column="9" selection-start-line="647" selection-start-column="9" selection-end-line="647" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classificator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
+        <state relative-caret-position="297">
+          <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
