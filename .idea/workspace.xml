@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="" />
+    <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="更新">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classificator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/convert_dict.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/create_training_set.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/NormalViewdict.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/SpecialView.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/View.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/multi_dict.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/new_view.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/view_1107.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/filter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/neg_dict.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/pos_dict.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/predict_neg.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/predict_pos.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/result/wight.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wighting.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cike.iml" afterPath="$PROJECT_DIR$/.idea/cike.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_file.py" afterPath="$PROJECT_DIR$/check_file.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Label.csv" afterPath="$PROJECT_DIR$/data/Label.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Label_test.csv" afterPath="$PROJECT_DIR$/data/Label_test.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Test.csv" afterPath="$PROJECT_DIR$/data/Test.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Train.csv" afterPath="$PROJECT_DIR$/data/Train.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/neg_dict.csv" afterPath="$PROJECT_DIR$/data/neg_dict.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/pos_dict.csv" afterPath="$PROJECT_DIR$/data/pos_dict.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/find_more_view.py" afterPath="$PROJECT_DIR$/find_more_view.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/methods.py" afterPath="$PROJECT_DIR$/methods.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/result.csv" afterPath="$PROJECT_DIR$/result/result.csv" />
+    </list>
     <ignored path="cike.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -15,15 +48,20 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cike$.coverage" NAME="忽略 Coverage Results" MODIFIED="1477636500612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$__1_.coverage" NAME="忽略 (1) Coverage Results" MODIFIED="1477578592005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1480836413784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$classificator.coverage" NAME="classificator Coverage Results" MODIFIED="1480834249060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike$getMotion.coverage" NAME="getMotion Coverage Results" MODIFIED="1477660318302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$test_one_case.coverage" NAME="test_one_case Coverage Results" MODIFIED="1480836816624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cike$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1477578596312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$merge.coverage" NAME="merge Coverage Results" MODIFIED="1480835087433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cike$test.coverage" NAME="test Coverage Results" MODIFIED="1477659911357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$test_Motion.coverage" NAME="test_Motion Coverage Results" MODIFIED="1477638729975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$t.coverage" NAME="t Coverage Results" MODIFIED="1477390942056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$PreProcess__2_.coverage" NAME="PreProcess (2) Coverage Results" MODIFIED="1477572876697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/cike$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1477659971949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/cike$getMotion.coverage" NAME="getMotion Coverage Results" MODIFIED="1477660318302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$PreProcess__1_.coverage" NAME="PreProcess (1) Coverage Results" MODIFIED="1477486312396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$t__1_.coverage" NAME="t (1) Coverage Results" MODIFIED="1477486552393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$check_file.coverage" NAME="check_file Coverage Results" MODIFIED="1480835093084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -34,31 +72,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Label.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/Label.csv">
+      <file leaf-file-name="pos_dict.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/pos_dict.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="19">
+              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_training_set.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_training_set.py">
+      <file leaf-file-name="neg_dict.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/neg_dict.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="91124">
+              <caret line="4796" column="8" lean-forward="false" selection-start-line="4796" selection-start-column="8" selection-end-line="4796" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classificator.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classificator.py">
+      <file leaf-file-name="check_file.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/check_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="2185">
+              <caret line="115" column="3" lean-forward="false" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -67,8 +105,18 @@
       <file leaf-file-name="methods.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/methods.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="4066">
+              <caret line="214" column="17" lean-forward="false" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="word2vec.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/word2vec.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,37 +132,40 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ssss</find>
+      <find>fashion</find>
+      <find>dream</find>
+      <find>low</find>
+      <find>good</find>
+      <find>newsantana</find>
+      <find>new</find>
+      <find>4s</find>
+      <find>abs</find>
+      <find>duang</find>
+      <find>公爵</find>
+      <find>filter</find>
+      <find>f</find>
+      <find>senten</find>
+      <find>全新</find>
+      <find>word</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data/dict.txt" />
-        <option value="$PROJECT_DIR$/backup.txt" />
-        <option value="$PROJECT_DIR$/data/userdict.csv" />
-        <option value="$PROJECT_DIR$/data/testLeftS.csv" />
-        <option value="$PROJECT_DIR$/data/View.csv" />
-        <option value="$PROJECT_DIR$/data/testLeftM.csv" />
-        <option value="$PROJECT_DIR$/data/dl.csv" />
-        <option value="$PROJECT_DIR$/新建文本文档.txt" />
-        <option value="$PROJECT_DIR$/data/Labell.csv" />
-        <option value="$PROJECT_DIR$/data/trainLeftS.csv" />
-        <option value="$PROJECT_DIR$/data/trainLeftM.csv" />
-        <option value="$PROJECT_DIR$/data/正面情感词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/正面评价词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/程度级别词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/负面情感词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/负面评价词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/主张词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/src/t.py" />
-        <option value="$PROJECT_DIR$/viewdict_backup.txt" />
-        <option value="$PROJECT_DIR$/data/trainlabel.csv" />
-        <option value="$PROJECT_DIR$/test/PreProcess.py" />
         <option value="$PROJECT_DIR$/test/忽略.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
         <option value="$PROJECT_DIR$/data/words.csv" />
-        <option value="$PROJECT_DIR$/data/Train.csv" />
         <option value="$PROJECT_DIR$/data/word.csv" />
         <option value="$PROJECT_DIR$/data/trainY.csv" />
         <option value="$PROJECT_DIR$/data/LabelY.csv" />
@@ -125,10 +176,8 @@
         <option value="$PROJECT_DIR$/src/test_Motion.py" />
         <option value="$PROJECT_DIR$/data/trainresult.csv" />
         <option value="$PROJECT_DIR$/data/testresult.csv" />
-        <option value="$PROJECT_DIR$/data/Label.csv" />
         <option value="$PROJECT_DIR$/data/LableJson.json" />
         <option value="$PROJECT_DIR$/src/test.py" />
-        <option value="$PROJECT_DIR$/data/Test.csv" />
         <option value="$PROJECT_DIR$/data/viewdict.csv" />
         <option value="$PROJECT_DIR$/data/motion_neg.csv" />
         <option value="$PROJECT_DIR$/data/motion_pos.csv" />
@@ -137,6 +186,34 @@
         <option value="$PROJECT_DIR$/src/忽略.py" />
         <option value="$PROJECT_DIR$/src/getMotion.py" />
         <option value="$PROJECT_DIR$/src/PreProcess.py" />
+        <option value="$PROJECT_DIR$/data/Views.csv" />
+        <option value="$PROJECT_DIR$/data/NormalViews.csv" />
+        <option value="$PROJECT_DIR$/find_more_view.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/test_one_case.py" />
+        <option value="$PROJECT_DIR$/data/Test_Stopwords.csv" />
+        <option value="$PROJECT_DIR$/PreProcess.py" />
+        <option value="$PROJECT_DIR$/result/result.csv" />
+        <option value="$PROJECT_DIR$/merge_stopword.py" />
+        <option value="$PROJECT_DIR$/data/SpecialViews.csv" />
+        <option value="$PROJECT_DIR$/result/Stopwords.txt" />
+        <option value="$PROJECT_DIR$/data/TrainSentiment.csv" />
+        <option value="$PROJECT_DIR$/data/TestSentiment.csv" />
+        <option value="$PROJECT_DIR$/classificator.py" />
+        <option value="$PROJECT_DIR$/data/Test.csv" />
+        <option value="$PROJECT_DIR$/data/Train.csv" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/process_result.py" />
+        <option value="$PROJECT_DIR$/filter_result.py" />
+        <option value="$PROJECT_DIR$/data/Label.csv" />
+        <option value="$PROJECT_DIR$/word2vec.py" />
+        <option value="$PROJECT_DIR$/methods.py" />
+        <option value="$PROJECT_DIR$/create_training_set.py" />
+        <option value="$PROJECT_DIR$/check_file.py" />
+        <option value="$PROJECT_DIR$/data/Stopwords.txt" />
+        <option value="$PROJECT_DIR$/weight_process.py" />
+        <option value="$PROJECT_DIR$/classifier.py" />
+        <option value="$PROJECT_DIR$/data/pos_dict.csv" />
       </list>
     </option>
   </component>
@@ -147,19 +224,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1378" />
-    <option name="height" value="735" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -177,118 +245,43 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cike" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cike" />
+              <option name="myItemId" value="cike_guoshuang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cike" />
+              <option name="myItemId" value="cike_guoshuang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xingwei\Desktop\cike_guoshuang-branch1\data" />
+      <recent name="C:\Users\xingwei\Desktop\cike_guoshuang-branch1" />
+      <recent name="E:\CCF\cike_guoshuang" />
+      <recent name="E:\CCF\cike_guoshuang\data" />
       <recent name="C:\Users\xingwei\Desktop\cike" />
-      <recent name="C:\Users\xingwei\Desktop\cike\data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xingwei\Desktop\cike_guoshuang-branch1\data" />
       <recent name="C:\Users\xingwei\Desktop\cike" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.classificator">
-    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CIKE" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="PreProcess" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CIKE" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/PreProcess.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test_Motion" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CIKE" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/test_Motion.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="getMotion" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CIKE" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/getMotion.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="classificator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.check_file">
+    <configuration default="false" name="classifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -301,7 +294,79 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="cike" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classificator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classifier.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="process_result" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cike" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_result.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="filter_result" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cike" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filter_result.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="check_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cike" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/check_file.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="weight_process" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cike" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weight_process.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -448,19 +513,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.PreProcess" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_Motion" />
-      <item index="3" class="java.lang.String" itemvalue="Python.getMotion" />
-      <item index="4" class="java.lang.String" itemvalue="Python.classificator" />
+      <item index="0" class="java.lang.String" itemvalue="Python.classifier" />
+      <item index="1" class="java.lang.String" itemvalue="Python.process_result" />
+      <item index="2" class="java.lang.String" itemvalue="Python.filter_result" />
+      <item index="3" class="java.lang.String" itemvalue="Python.check_file" />
+      <item index="4" class="java.lang.String" itemvalue="Python.weight_process" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.classificator" />
-        <item index="1" class="java.lang.String" itemvalue="Python.getMotion" />
-        <item index="2" class="java.lang.String" itemvalue="Python.PreProcess" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test_Motion" />
+        <item index="0" class="java.lang.String" itemvalue="Python.check_file" />
+        <item index="1" class="java.lang.String" itemvalue="Python.process_result" />
+        <item index="2" class="java.lang.String" itemvalue="Python.classifier" />
+        <item index="3" class="java.lang.String" itemvalue="Python.weight_process" />
+        <item index="4" class="java.lang.String" itemvalue="Python.filter_result" />
       </list>
     </recent_temporary>
   </component>
@@ -478,6 +543,70 @@
       <option name="presentableId" value="Default" />
       <updated>1477025947721</updated>
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1480829669650</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1480829669650</updated>
+    </task>
+    <task id="LOCAL-00002" summary="T">
+      <created>1480829957927</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480829957927</updated>
+    </task>
+    <task id="LOCAL-00003" summary="T">
+      <created>1480831690916</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1480831690916</updated>
+    </task>
+    <task id="LOCAL-00004" summary="T">
+      <created>1480833220525</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1480833220525</updated>
+    </task>
+    <task id="LOCAL-00005" summary="测试本地更新~">
+      <created>1480833584447</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1480833584447</updated>
+    </task>
+    <task id="LOCAL-00006" summary="测试本地更新~">
+      <created>1480835200711</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1480835200711</updated>
+    </task>
+    <task id="LOCAL-00007" summary="测试本地更新~">
+      <created>1480835709247</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1480835709247</updated>
+    </task>
+    <task id="LOCAL-00008" summary="更新">
+      <created>1480839937456</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1480839937456</updated>
+    </task>
+    <task id="LOCAL-00009" summary="更新">
+      <created>1480839942325</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1480839942325</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -490,29 +619,47 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17033774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17130308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21895425" sideWeight="0.69742817" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29575163" sideWeight="0.28668684" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3301738" sideWeight="0.290469" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22058824" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53846157" sideWeight="0.71331316" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18137255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38235295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27172196" sideWeight="0.709531" order="2" side_tool="false" content_ui="tabs" x="304" y="444" width="962" height="247" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46129543" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15323855" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -525,47 +672,20 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <MESSAGE value="T" />
+    <MESSAGE value="测试本地更新~" />
+    <MESSAGE value="更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/dict.txt" />
-    <entry file="file://$PROJECT_DIR$/data/ladict.csv" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/jieba-0.38-py3.5.egg/jieba/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/data/TrainLeftMCopy.csv" />
-    <entry file="file://$PROJECT_DIR$/data/testLeftS.csv" />
-    <entry file="file://$PROJECT_DIR$/data/trainLeftS.csv" />
-    <entry file="file://$PROJECT_DIR$/data/Labell.csv" />
-    <entry file="file://$PROJECT_DIR$/data/userdict.csv" />
-    <entry file="file://$PROJECT_DIR$/data/motion_neg.txt" />
-    <entry file="file://$PROJECT_DIR$/data/负面评价词语（中文）.txt" />
-    <entry file="file://$PROJECT_DIR$/data/程度级别词语（中文）.txt" />
-    <entry file="file://$PROJECT_DIR$/data/正面评价词语（中文）.txt" />
-    <entry file="file://$PROJECT_DIR$/data/主张词语（中文）.txt" />
-    <entry file="file://$PROJECT_DIR$/data/motion_talbe.csv" />
-    <entry file="file://$PROJECT_DIR$/data/motion_pos.txt" />
-    <entry file="file://$PROJECT_DIR$/data/motion_table.csv" />
-    <entry file="file://$PROJECT_DIR$/src/t.py" />
-    <entry file="file://$PROJECT_DIR$/data/r.csv" />
-    <entry file="file://$PROJECT_DIR$/data/trainlabel.csv" />
-    <entry file="file://$PROJECT_DIR$/data/train_wrong_data.csv" />
-    <entry file="file://$PROJECT_DIR$/data/View.csv" />
-    <entry file="file://$PROJECT_DIR$/data/LabelY.csv" />
-    <entry file="file://$PROJECT_DIR$/data/word.csv" />
-    <entry file="file://$PROJECT_DIR$/src/test_Motion.py" />
-    <entry file="file://$PROJECT_DIR$/readme.txt" />
-    <entry file="file://$PROJECT_DIR$/data/trainY.csv" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/json/decoder.py" />
-    <entry file="file://$PROJECT_DIR$/data/Test.csv" />
-    <entry file="file://$PROJECT_DIR$/data/Train.csv" />
-    <entry file="file://$PROJECT_DIR$/data/word_pos.csv" />
-    <entry file="file://$PROJECT_DIR$/data/stopWord.txt" />
-    <entry file="file://$PROJECT_DIR$/data/motion_neg.csv" />
-    <entry file="file://$PROJECT_DIR$/data/word_neg.csv" />
-    <entry file="file://$PROJECT_DIR$/data/LableJson.json" />
     <entry file="file://$PROJECT_DIR$/data/analyse_wrong.csv" />
     <entry file="file://$PROJECT_DIR$/data/motion_pos.csv" />
     <entry file="file://$PROJECT_DIR$/Q.txt" />
@@ -578,38 +698,139 @@
     <entry file="file://$PROJECT_DIR$/src/getMotion.py" />
     <entry file="file://$PROJECT_DIR$/data/id_wrong.csv" />
     <entry file="file://$PROJECT_DIR$/src/PreProcess.py" />
-    <entry file="file://$PROJECT_DIR$/data/Label.csv">
+    <entry file="file://$PROJECT_DIR$/train.py" />
+    <entry file="file://$PROJECT_DIR$/data/motion_neg.csv" />
+    <entry file="file://$PROJECT_DIR$/data/new_view.csv" />
+    <entry file="file://$PROJECT_DIR$/Procecess.py" />
+    <entry file="file://$PROJECT_DIR$/data/AllViews.csv" />
+    <entry file="file://$PROJECT_DIR$/data/Views.csv" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/filted_testresult.csv" />
+    <entry file="file://$PROJECT_DIR$/find_more_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/NormalViews.csv" />
+    <entry file="file://$PROJECT_DIR$/test_one_case.py" />
+    <entry file="file://$PROJECT_DIR$/PreProcess.py" />
+    <entry file="file://$PROJECT_DIR$/result/id_wrong.csv" />
+    <entry file="file://$PROJECT_DIR$/result/result.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="21737" column="15" lean-forward="false" selection-start-line="21737" selection-start-column="15" selection-end-line="21737" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Test_Stopwords.csv" />
+    <entry file="file://$PROJECT_DIR$/data/Stopwords.csv" />
+    <entry file="file://$PROJECT_DIR$/merge_stopword.py" />
+    <entry file="file://$PROJECT_DIR$/data/SpecialViews.csv" />
+    <entry file="file://$PROJECT_DIR$/data/wight.csv" />
+    <entry file="file://$PROJECT_DIR$/data/TrainSentiment.csv" />
+    <entry file="file://$PROJECT_DIR$/data/Test.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/weight.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="12973" column="8" lean-forward="true" selection-start-line="12973" selection-start-column="8" selection-end-line="12973" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/TestSentiment.csv" />
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/data/Label.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="9073" column="16" lean-forward="false" selection-start-line="9073" selection-start-column="15" selection-end-line="9073" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/merge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/create_training_set.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-1049">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/process_result.py" />
     <entry file="file://$PROJECT_DIR$/methods.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="4066">
+          <caret line="214" column="17" lean-forward="false" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py" />
-    <entry file="file://$PROJECT_DIR$/classificator.py">
+    <entry file="file://$PROJECT_DIR$/word2vec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="304">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/check_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2185">
+          <caret line="115" column="3" lean-forward="false" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filter_result.py" />
+    <entry file="file://$PROJECT_DIR$/data/neg_dict.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91124">
+          <caret line="4796" column="8" lean-forward="false" selection-start-line="4796" selection-start-column="8" selection-end-line="4796" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/pos_dict.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Stopwords.txt" />
+    <entry file="file://$PROJECT_DIR$/weight_process.py" />
+    <entry file="file://$PROJECT_DIR$/classifier.py" />
   </component>
 </project>
