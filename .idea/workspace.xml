@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_file.py" afterPath="$PROJECT_DIR$/check_file.py" />
     </list>
     <ignored path="cike.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +45,8 @@
       <file leaf-file-name="check_file.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="108" column="19" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="19" />
+            <state relative-caret-position="261">
+              <caret line="120" column="29" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -56,7 +55,7 @@
       <file leaf-file-name="classificator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classificator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
+            <state relative-caret-position="2812">
               <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -660,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480915972328</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="删除部分规则">
+      <created>1480916164769</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1480916164769</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -676,25 +682,25 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18078668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21895425" sideWeight="0.69742817" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18494272" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22058824" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.45335516" sideWeight="0.709531" order="2" side_tool="false" content_ui="tabs" x="212" y="221" width="729" height="413" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18137255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49394855" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.45335516" sideWeight="0.709531" order="2" side_tool="false" content_ui="tabs" x="212" y="221" width="729" height="413" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49394855" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -802,7 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="229" column="6" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="229" column="6" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="33000" column="18" selection-start-line="33000" selection-start-column="18" selection-end-line="33000" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="2375" column="0" selection-start-line="2375" selection-start-column="0" selection-end-line="2375" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="9800" column="17" selection-start-line="9800" selection-start-column="12" selection-end-line="9800" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="30867" column="21" selection-start-line="30867" selection-start-column="21" selection-end-line="30867" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="6826" column="14" selection-start-line="6826" selection-start-column="8" selection-end-line="6826" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="3266" column="5" selection-start-line="3266" selection-start-column="5" selection-end-line="3266" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,23 +885,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="767" column="6" selection-start-line="767" selection-start-column="0" selection-end-line="767" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/getDict.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="108" column="6" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/getDict.csv" />
     <entry file="file://$PROJECT_DIR$/methods.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13813">
           <caret line="727" column="2" selection-start-line="727" selection-start-column="2" selection-end-line="727" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="335" column="2" selection-start-line="335" selection-start-column="1" selection-end-line="335" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="7579" column="8" selection-start-line="7579" selection-start-column="8" selection-end-line="7579" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,25 +928,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90763">
           <caret line="4777" column="8" selection-start-line="4777" selection-start-column="8" selection-end-line="4777" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/TestTrain.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/TestTrain.csv" />
     <entry file="file://$PROJECT_DIR$/test_one_case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -972,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-63524">
           <caret line="647" column="9" selection-start-line="647" selection-start-column="9" selection-end-line="647" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,13 +950,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="2974" column="11" selection-start-line="2974" selection-start-column="11" selection-end-line="2974" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classificator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="2812">
           <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -996,8 +965,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="108" column="19" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="19" />
+        <state relative-caret-position="261">
+          <caret line="120" column="29" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
           <folding />
         </state>
       </provider>
