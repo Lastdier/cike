@@ -38,6 +38,7 @@ for line in label_data:
         lists[line[0]]=1
         if(check_data.get(trains[line[1]]) is not None):
             for i in range(0,len(list(check_data[trains[line[1]]]))):
+                print(line[0])
                 result.write((line[0]+','+list(check_data[trains[line[1]]])[i]+','+check_data[trains[line[1]]][list(check_data[trains[line[1]]])[i]])+'\n')
         else:
             pass

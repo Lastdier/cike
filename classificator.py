@@ -2,6 +2,7 @@ from sklearn import svm
 from sklearn import preprocessing
 from sklearn.ensemble import GradientBoostingClassifier
 from methods import *
+from sklearn import metrics
 import time
 
 def create_training_set(features,emotion, num_of_train):
@@ -49,26 +50,22 @@ def create_training_set(features,emotion, num_of_train):
             view_list = label_ref[comment_id]
         view_count = len(view_list)  # 读取视角数
         lines = re.split('。|,|，|:|：|；|\n',comment)
-        dict = {}
         for view,motion in view_list:
-            dict[view] = ''
             strour = ''
             temp = 0
             for j in range(0, len(lines)):
                 temp_len = 0
                 if (lines[j].__contains__(view)):
                     strour += lines[j]
-                    dict[view] = strour
                     temp = j
-                elif (dict[view] != ''):
+                elif (strour!= ''):
                     for s in range(0,view_count):
                         if ((lines[j].__contains__(view_list[s][0])) == False):
                             temp_len += 1
                     if (temp_len == view_count and j > temp):
                         strour += lines[j]
-                        dict[view] = strour
                         temp = j
-            words_list=word_filter(dict[view],StopWords)
+            words_list=word_filter(strour,StopWords)
             result_X.append(search_features_and_wight(words_list, features))
             if motion == emotion:
                 result_Y.append(1)
@@ -82,7 +79,7 @@ NUM_OF_TRAIN = 10000
 FEATURES_FILE = 'pos_dict.csv'
 TEST_FILE = 'Train.csv'
 OUTPUT_FILE = 'predict_pos.csv'
-NUM_OF_FEATURES = 10271#14271 4797
+NUM_OF_FEATURES = 10271#10271 4799
 CLASS_EMOTION = 'pos'
 itime=time.time()
 
@@ -118,22 +115,26 @@ for line in test_data:
     comment = l2[1]
     # 识别视角
     views = getViews(comment, NormaleViews, SpecialViews)
-    '''
+    #用于存放经过规则处理之后应删除的视角
+    remove_views=[]
     # 处理比较句
-    if (comment.__contains__('？') and comment.__contains__('怎么')):
-        for comview in views:
-            result_file.write('%s\t%s\t%d\n' % (comment_id, comview, 1))
-        continue
-    comviews = getCompSentence(views, l2[1])
-    for comview in comviews:
+    compViews = getCompSentence(views, l2[1])
+    for comview in compViews:
         result_file.write('%s\t%s\t%d\n' % (comment_id, comview, 0))
-        views.remove(comview)
+        remove_views.append(comview)
+    #把比较句中的视角词删除了，避免有些视角词同时出现在特殊句式中，这里还有个优先级待做
+    for view in remove_views:
+        views.remove(view)
+    remove_views=[]
     # 处理反比句
     comviews = getInverseSen(views, l2[1])
     for comview in comviews:
         result_file.write('%s\t%s\t%d\n' % (comment_id, comview, 0))
-        views.remove(comview)
-    '''
+        remove_views.append(comview)
+    for view in remove_views:
+        views.remove(view)
+    if (views == []):
+        continue
     lines = re.split('。|,|，|:|：|；|\n', l2[1])
     for i in range(0, len(views)):
         sentence = getSentence(views[i], views, lines)
@@ -142,7 +143,13 @@ for line in test_data:
         test_x = [test_x]
         test_x = preprocessing.normalize(test_x)
         test_y = clf.predict(test_x)
-        result_file.write('%s\t%s\t%d\n' % (comment_id, views[i],test_y[0]))
+        motion=int(test_y[0])
+        if(motion==0 and CLASS_EMOTION=='neg'):
+            neg_words=['召回','自燃']
+            for negword in neg_words:
+                if (sentence.__contains__(negword)):
+                    motion=1
+        result_file.write('%s\t%s\t%d\n' % (comment_id, views[i],motion))
 result_file.close()
 t=time.time()
 print('共用时'+str(t-itime))

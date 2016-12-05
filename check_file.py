@@ -7,6 +7,8 @@ views={}
 from methods import *
 zhaodanshijiao={}
 tp, fp, fn1, fn2 = 0, 0, 0, 0
+#实际_预测
+pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg=0,0,0,0,0,0
 label_file = open('data/Label.csv', encoding='utf-8')
 label_data = label_file.readlines()
 label_file.close()
@@ -24,6 +26,7 @@ for line in label_data:
     comment_view = content[1]
     views[comment_view]=1
     view_emotion = content[2]
+
     if check_data.get(comment_id) is None:
         check_data[comment_id] = {comment_view: view_emotion}
         Label_data[comment_id] = comment_view
@@ -64,31 +67,48 @@ for line in result_data:
         Train_result_data[comment_id]+=comment_view
     if check_data.get(comment_id) is None:
         fn2 += 1
+        #wrong_data.write(comment_id + ' 多判视角为：' + comment_view + ' 实际视角为：' + ' 句子：' + Train_data[comment_id] + '\n')
         continue
     if check_data.get(comment_id).get(comment_view) is None:
         fn2+=1
-        '''
-        wrong_data.write(comment_id + ' 多判视角为：' +comment_view+' 实际视角为：'+ Label_data[comment_id]+' 句子：'+Train_data[comment_id] + '\n')
-       '''
+        #if(comment_id.__contains__('S')):
+            #wrong_data.write(comment_id + ' 多判视角为：' +comment_view+' 实际视角为：'+ Label_data[comment_id]+' 句子：'+Train_data[comment_id] + '\n')
         continue
     if view_emotion == check_data[comment_id][comment_view]:
         tp += 1
     else:
         fp += 1
+        wrong_data.write(
+            comment_id + '\t' + '实际情感:' + check_data[comment_id][comment_view] + ' 预测情感:' + view_emotion + '\t' +
+            Train_data[comment_id] + '\n')
         #if (Train_data[comment_id].__contains__('然而') or Train_data[comment_id].__contains__('但是')):
-        #if(view_emotion=='pos' and check_data[comment_id][comment_view]=='neu' ):
             #word_list = word_filter(Train_data[comment_id], StopWords)
             #wrong_data.write(Train_data[comment_id] +' 分词结果'+listTostring(word_list) +'\n')
+        if (view_emotion == 'neu' and check_data[comment_id][comment_view] == 'pos'):
+            pos_neu+=1
+
+        elif (view_emotion == 'neu' and check_data[comment_id][comment_view] == 'neg'):
+            neg_neu+=1
+        elif (view_emotion == 'neg' and check_data[comment_id][comment_view] == 'pos'):
+            pos_neg += 1
+        elif (view_emotion == 'pos' and check_data[comment_id][comment_view] == 'neg'):
+            neg_pos += 1
+
+        elif (view_emotion == 'pos' and check_data[comment_id][comment_view] == 'neu'):
+            neu_pos += 1
+        elif (view_emotion == 'neg' and check_data[comment_id][comment_view] == 'neu'):
+            neu_neg += 1
             #wrong_data.write(comment_id+'\t' + '实际情感:'+check_data[comment_id][comment_view]+' 预测情感:'+view_emotion+'\t'+Train_data[comment_id] + '\n')
     comment_views_checked[comment_id] -= 1
 
 for comment_id in comment_views_checked:
+    '''
     if(comment_views_checked[comment_id] !=0 and Train_result_data.get(comment_id) is not None):
-        pass
-        #wrong_data.write(comment_id + ' 实际视角为：' +Label_data[comment_id] + ' 预测视角为：'+Train_result_data[comment_id]+ ' 句子：' + Train_data[comment_id] + '\n')
+        wrong_data.write(comment_id + ' 实际视角为：' +Label_data[comment_id] + ' 预测视角为：'+Train_result_data[comment_id]+ ' 句子：' + Train_data[comment_id] + '\n')
     elif (comment_views_checked[comment_id] != 0 and Train_result_data.get(comment_id) is None):
-        pass;
+        pass
         #wrong_data.write(comment_id + ' 实际视角为：' + Label_data[comment_id]+ ' 句子：' +Train_data[comment_id] + '\n')
+    '''
     fn1 += comment_views_checked[comment_id]
 
 print('正确的情感分析数：'+str(tp))
@@ -101,16 +121,15 @@ f1=2*p*r/(p+r)
 print('准确率是：'+str(p*100)+'%')
 print('召回率是：'+str(r*100)+'%')
 print('F1是：'+str(f1*100)+'%')
-
+print('实际_预测:pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg',pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg)
 '''
-线上:0.59126 机器学习+修改特权权重方法为:cw
-不要那些自己加的什么 neg neu
-正确的情感分析数：17038
-错误的情感分析数：3044
-漏判的视角数：534
-无效(多判)的视角数：1666
-准确率是：78.34283612286187%
-召回率是：96.9610744366037%
-F1是：86.66327568667344%
 
+正确的情感分析数：17089
+错误的情感分析数：2978
+漏判的视角数：549
+无效(多判)的视角数：1669
+准确率是：78.62072138387927%
+召回率是：96.88740219979589%
+F1是：86.80347437395235%
+实际_预测:pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg 1771 13 625 47 463 57
 '''

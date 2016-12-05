@@ -141,7 +141,7 @@ def getDict(trainname,labelname,stopWords,pospath,negpath):
     label.close()
     for line in label_data:
         line = line.strip()
-        content = line.split(',')
+        content = line.split('\t')
         if not len(content) == 3:
             continue
         label_id = content[0]
@@ -356,13 +356,13 @@ eTime=time.time()
 print("拆分总视角表总共用时：" + str(eTime - iTime))
 #得到停用词表，输入是数据集+SpecialViews+NormalViews，输入是StopWords.csv
 itime=time.time()
-getStopWords(trainname,StopName,NormaleViews,SpecialViews)
+#getStopWords(trainname,StopName,NormaleViews,SpecialViews)
 etime=time.time()
 print('得到停用词表总共用时:'+str(etime-itime))
 #得到情感词典，输入是文件名称+停用词表，输出是积极情感词典+消极情感词典
 stopWords = load_dict(StopName)
 itime=time.time()
-#getDict(filename,labelname,stopWords,pospath,negpath)
+getDict(trainname,labelname,stopWords,pospath,negpath)
 etime=time.time()
 print('得到情感词典总共用时:'+str(etime-itime))
 iTime=time.time()

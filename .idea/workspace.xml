@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="更新">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/TestSentiment.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/Test_Stopwords.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/TrainSentiment.csv" />
+    <list default="true" id="b6f6eb6a-7672-4a6c-84db-73c701af11ef" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/create_training_set.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreProcess.py" afterPath="$PROJECT_DIR$/PreProcess.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_file.py" afterPath="$PROJECT_DIR$/check_file.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classificator.py" afterPath="$PROJECT_DIR$/classificator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/AllViews.csv" afterPath="$PROJECT_DIR$/data/AllViews.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Label.csv" afterPath="$PROJECT_DIR$/data/Label.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/NormalViews.csv" afterPath="$PROJECT_DIR$/data/NormalViews.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/SpecialViews.csv" afterPath="$PROJECT_DIR$/data/SpecialViews.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Test_Stopwords.csv" afterPath="$PROJECT_DIR$/data/Test_Stopwords.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Views.csv" afterPath="$PROJECT_DIR$/data/Views.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/neg_dict.csv" afterPath="$PROJECT_DIR$/data/neg_dict.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/pos_dict.csv" afterPath="$PROJECT_DIR$/data/pos_dict.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filter_result.py" afterPath="$PROJECT_DIR$/filter_result.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/merge.py" afterPath="$PROJECT_DIR$/merge.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/methods.py" afterPath="$PROJECT_DIR$/methods.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/filted_testresult.csv" afterPath="$PROJECT_DIR$/result/filted_testresult.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/predict_neg.csv" afterPath="$PROJECT_DIR$/result/predict_neg.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/predict_pos.csv" afterPath="$PROJECT_DIR$/result/predict_pos.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/result.csv" afterPath="$PROJECT_DIR$/result/result.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_one_case.py" afterPath="$PROJECT_DIR$/test_one_case.py" />
     </list>
     <ignored path="cike.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,12 +38,13 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cike$.coverage" NAME="忽略 Coverage Results" MODIFIED="1477636500612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$__1_.coverage" NAME="忽略 (1) Coverage Results" MODIFIED="1477578592005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/cike_guoshuang$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1480836413784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/cike_guoshuang$classificator.coverage" NAME="classificator Coverage Results" MODIFIED="1480834249060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1480912438007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$classificator.coverage" NAME="classificator Coverage Results" MODIFIED="1480912855811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cike$getMotion.coverage" NAME="getMotion Coverage Results" MODIFIED="1477660318302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/cike_guoshuang$test_one_case.coverage" NAME="test_one_case Coverage Results" MODIFIED="1480836816624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$test_one_case.coverage" NAME="test_one_case Coverage Results" MODIFIED="1480910397983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cike$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1477578596312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/cike_guoshuang$merge.coverage" NAME="merge Coverage Results" MODIFIED="1480835087433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$filter_result.coverage" NAME="filter_result Coverage Results" MODIFIED="1480902526786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$merge.coverage" NAME="merge Coverage Results" MODIFIED="1480913102537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cike$test.coverage" NAME="test Coverage Results" MODIFIED="1477659911357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$test_Motion.coverage" NAME="test_Motion Coverage Results" MODIFIED="1477638729975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$t.coverage" NAME="t Coverage Results" MODIFIED="1477390942056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
@@ -35,7 +52,7 @@
     <SUITE FILE_PATH="coverage/cike$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1477659971949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$PreProcess__1_.coverage" NAME="PreProcess (1) Coverage Results" MODIFIED="1477486312396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/cike$t__1_.coverage" NAME="t (1) Coverage Results" MODIFIED="1477486552393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/cike_guoshuang$check_file.coverage" NAME="check_file Coverage Results" MODIFIED="1480835093084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cike_guoshuang$check_file.coverage" NAME="check_file Coverage Results" MODIFIED="1480913106641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -46,12 +63,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Test_Stopwords.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/Test_Stopwords.csv">
+      <file leaf-file-name="check_file.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/check_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="9105" column="3" selection-start-line="9105" selection-start-column="3" selection-end-line="9105" selection-end-column="3" />
+            <state relative-caret-position="302">
+              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classificator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classificator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,16 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data/trainLeftM.csv" />
-        <option value="$PROJECT_DIR$/data/正面情感词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/正面评价词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/程度级别词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/负面情感词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/负面评价词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/data/主张词语（中文）.txt" />
-        <option value="$PROJECT_DIR$/src/t.py" />
-        <option value="$PROJECT_DIR$/viewdict_backup.txt" />
-        <option value="$PROJECT_DIR$/data/trainlabel.csv" />
         <option value="$PROJECT_DIR$/test/PreProcess.py" />
         <option value="$PROJECT_DIR$/test/忽略.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
@@ -101,7 +120,6 @@
         <option value="$PROJECT_DIR$/src/test_Motion.py" />
         <option value="$PROJECT_DIR$/data/trainresult.csv" />
         <option value="$PROJECT_DIR$/data/testresult.csv" />
-        <option value="$PROJECT_DIR$/data/Label.csv" />
         <option value="$PROJECT_DIR$/data/LableJson.json" />
         <option value="$PROJECT_DIR$/src/test.py" />
         <option value="$PROJECT_DIR$/data/Test.csv" />
@@ -115,19 +133,30 @@
         <option value="$PROJECT_DIR$/src/PreProcess.py" />
         <option value="$PROJECT_DIR$/data/Views.csv" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/data/NormalViews.csv" />
-        <option value="$PROJECT_DIR$/data/SpecialViews.csv" />
         <option value="$PROJECT_DIR$/find_more_view.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/classificator.py" />
         <option value="$PROJECT_DIR$/data/TrainSentiment.csv" />
-        <option value="$PROJECT_DIR$/test_one_case.py" />
         <option value="$PROJECT_DIR$/data/Test_Stopwords.csv" />
         <option value="$PROJECT_DIR$/data/TestSentiment.csv" />
-        <option value="$PROJECT_DIR$/PreProcess.py" />
         <option value="$PROJECT_DIR$/data/Train.csv" />
-        <option value="$PROJECT_DIR$/check_file.py" />
         <option value="$PROJECT_DIR$/result/result.csv" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/result/predict_neg.csv" />
+        <option value="$PROJECT_DIR$/result/predict_pos.csv" />
+        <option value="$PROJECT_DIR$/filter_result.py" />
+        <option value="$PROJECT_DIR$/data/AllViews.csv" />
+        <option value="$PROJECT_DIR$/methods.py" />
+        <option value="$PROJECT_DIR$/data/Label.csv" />
+        <option value="$PROJECT_DIR$/merge.py" />
+        <option value="$PROJECT_DIR$/data/getDict.csv" />
+        <option value="$PROJECT_DIR$/result/id_wrong.csv" />
+        <option value="$PROJECT_DIR$/data/NormalViews.csv" />
+        <option value="$PROJECT_DIR$/data/SpecialViews.csv" />
+        <option value="$PROJECT_DIR$/PreProcess.py" />
+        <option value="$PROJECT_DIR$/data/neg_dict.csv" />
+        <option value="$PROJECT_DIR$/data/pos_dict.csv" />
+        <option value="$PROJECT_DIR$/classificator.py" />
+        <option value="$PROJECT_DIR$/test_one_case.py" />
+        <option value="$PROJECT_DIR$/check_file.py" />
       </list>
     </option>
   </component>
@@ -196,28 +225,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="result" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cike_guoshuang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cike_guoshuang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,7 +252,7 @@
       <recent name="C:\Users\xingwei\Desktop\cike\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_one_case">
+  <component name="RunManager" selected="Python.check_file">
     <configuration default="false" name="classificator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -411,6 +426,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -539,11 +560,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_one_case" />
-        <item index="1" class="java.lang.String" itemvalue="Python.PreProcess" />
-        <item index="2" class="java.lang.String" itemvalue="Python.check_file" />
-        <item index="3" class="java.lang.String" itemvalue="Python.merge" />
-        <item index="4" class="java.lang.String" itemvalue="Python.classificator" />
+        <item index="0" class="java.lang.String" itemvalue="Python.check_file" />
+        <item index="1" class="java.lang.String" itemvalue="Python.merge" />
+        <item index="2" class="java.lang.String" itemvalue="Python.classificator" />
+        <item index="3" class="java.lang.String" itemvalue="Python.PreProcess" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test_one_case" />
       </list>
     </recent_temporary>
   </component>
@@ -624,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480839942325</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="更新">
+      <created>1480840252009</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1480840252009</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -638,27 +666,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17170954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21895425" sideWeight="0.69742817" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.290469" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22058824" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.45335516" sideWeight="0.709531" order="2" side_tool="false" content_ui="tabs" x="304" y="290" width="962" height="401" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.45335516" sideWeight="0.709531" order="2" side_tool="false" content_ui="tabs" x="212" y="221" width="729" height="413" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18137255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.49394855" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38235295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -702,7 +730,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/classificator.py</url>
-          <line>139</line>
+          <line>140</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -711,11 +739,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/LabelY.csv" />
-    <entry file="file://$PROJECT_DIR$/data/word.csv" />
-    <entry file="file://$PROJECT_DIR$/src/test_Motion.py" />
-    <entry file="file://$PROJECT_DIR$/readme.txt" />
-    <entry file="file://$PROJECT_DIR$/data/trainY.csv" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/json/decoder.py" />
     <entry file="file://$PROJECT_DIR$/data/word_pos.csv" />
     <entry file="file://$PROJECT_DIR$/data/stopWord.txt" />
@@ -733,108 +756,14 @@
     <entry file="file://$PROJECT_DIR$/src/getMotion.py" />
     <entry file="file://$PROJECT_DIR$/data/id_wrong.csv" />
     <entry file="file://$PROJECT_DIR$/src/PreProcess.py" />
-    <entry file="file://$PROJECT_DIR$/create_training_set.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train.py" />
-    <entry file="file://$PROJECT_DIR$/data/motion_neg.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/new_view.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/pos_dict.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procecess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-786">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/SpecialViews.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="727" column="2" selection-start-line="727" selection-start-column="2" selection-end-line="727" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/merge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/AllViews.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="1789" column="4" selection-start-line="1789" selection-start-column="2" selection-end-line="1789" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Label.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9379" column="12" selection-start-line="9379" selection-start-column="10" selection-end-line="9379" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/motion_neg.csv" />
+    <entry file="file://$PROJECT_DIR$/data/new_view.csv" />
+    <entry file="file://$PROJECT_DIR$/Procecess.py" />
     <entry file="file://$PROJECT_DIR$/data/Views.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="4334" column="2" selection-start-line="4334" selection-start-column="2" selection-end-line="4334" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Stopwords.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86564">
-          <caret line="4556" column="3" selection-start-line="4556" selection-start-column="3" selection-end-line="4556" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/neg_dict.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90409">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,15 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-916776">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Test.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,76 +778,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/NormalViews.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/methods.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="197" column="12" selection-start-line="197" selection-start-column="12" selection-end-line="197" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/create_training_set.py" />
     <entry file="file://$PROJECT_DIR$/data/TrainSentiment.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276127">
-          <caret line="14533" column="18" selection-start-line="14533" selection-start-column="18" selection-end-line="14533" selection-end-column="18" />
+        <state relative-caret-position="285">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/predict_pos.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="229" column="6" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_one_case.py">
+    <entry file="file://$PROJECT_DIR$/result/predict_neg.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="151" column="39" selection-start-line="151" selection-start-column="39" selection-end-line="151" selection-end-column="39" />
-          <folding>
-            <marker date="1480836813778" expanded="false" signature="644:871" ph="import ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PreProcess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="358" column="17" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
-          <folding>
-            <element signature="e#74#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Train.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="6325" column="20" selection-start-line="6325" selection-start-column="20" selection-end-line="6325" selection-end-column="20" />
+        <state relative-caret-position="173">
+          <caret line="229" column="6" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classificator.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2079">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result/id_wrong.csv">
+    <entry file="file://$PROJECT_DIR$/filter_result.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="95">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -940,27 +829,167 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/Test_Stopwords.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="2375" column="0" selection-start-line="2375" selection-start-column="0" selection-end-line="2375" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="9800" column="17" selection-start-line="9800" selection-start-column="12" selection-end-line="9800" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Test.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="30867" column="21" selection-start-line="30867" selection-start-column="21" selection-end-line="30867" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/merge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Label.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="6826" column="14" selection-start-line="6826" selection-start-column="8" selection-end-line="6826" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/AllViews.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="3266" column="5" selection-start-line="3266" selection-start-column="5" selection-end-line="3266" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/result/result.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="21737" column="15" selection-start-line="21737" selection-start-column="15" selection-end-line="21737" selection-end-column="15" />
+        <state relative-caret-position="171">
+          <caret line="767" column="6" selection-start-line="767" selection-start-column="0" selection-end-line="767" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/getDict.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="108" column="6" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/id_wrong.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56563">
+          <caret line="2977" column="80" selection-start-line="2977" selection-start-column="80" selection-end-line="2977" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/SpecialViews.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13813">
+          <caret line="727" column="2" selection-start-line="727" selection-start-column="2" selection-end-line="727" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Stopwords.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="335" column="2" selection-start-line="335" selection-start-column="1" selection-end-line="335" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PreProcess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/pos_dict.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="7579" column="8" selection-start-line="7579" selection-start-column="8" selection-end-line="7579" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/neg_dict.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90763">
+          <caret line="4777" column="8" selection-start-line="4777" selection-start-column="8" selection-end-line="4777" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/NormalViews.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="637" column="7" selection-start-line="637" selection-start-column="6" selection-end-line="637" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/TestTrain.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_one_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/check_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+        <state relative-caret-position="302">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Test_Stopwords.csv">
+    <entry file="file://$PROJECT_DIR$/classificator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="9105" column="3" selection-start-line="9105" selection-start-column="3" selection-end-line="9105" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="277">
+          <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

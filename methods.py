@@ -76,6 +76,7 @@ def preNormalViews(str):
     str = str.replace('进口大众尚酷DSG', '大众尚酷DSG')
     str = str.replace('[起亚律动]', '')
     str = str.replace('变形金刚', '')
+    str = str.replace('[Lavida生活]', '')
     str = str.replace('雷克萨斯rx200t', '雷克萨斯rx')
     return str
 

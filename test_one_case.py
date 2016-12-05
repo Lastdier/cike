@@ -1,26 +1,3 @@
-'''
-#根据现有的视角词后面出现英文，数字，-,·来扩展视角词
-d
-label_file = open('data/Train.csv', encoding='utf-8')
-label_data = label_file.readlines()
-label_file.close()
-pos={}
-import re
-result = open('data/getDict.csv','w' ,encoding='utf-8')
-for line in label_data:
-    l1 = line.strip()
-    line=line.split('\t')
-    if line[1].__contains__('车型：'):
-        pos[line[0]]=line[1]
-label_file = open('data/Label.csv', encoding='utf-8')
-label_data = label_file.readlines()
-label_file.close()
-id={}
-for line in label_data:
-    line=line.strip()
-    line=line.split('\t')
-    if (pos.get(line[0]) is not None):
-        result.write(line[0] + '\t' +line[2]+'\t'+pos[line[0]])
 from sklearn.ensemble import GradientBoostingClassifier
 # !usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -42,14 +19,12 @@ def naive_bayes_classifier(train_x, train_y):
     model.fit(train_x, train_y)
     return model
 
-
 # KNN Classifier
 def knn_classifier(train_x, train_y):
     from sklearn.neighbors import KNeighborsClassifier
     model = KNeighborsClassifier()
     model.fit(train_x, train_y)
     return model
-
 
 # Logistic Regression Classifier
 def logistic_regression_classifier(train_x, train_y):
@@ -58,14 +33,12 @@ def logistic_regression_classifier(train_x, train_y):
     model.fit(train_x, train_y)
     return model
 
-
 # Random Forest Classifier
 def random_forest_classifier(train_x, train_y):
     from sklearn.ensemble import RandomForestClassifier
     model = RandomForestClassifier(n_estimators=8)
     model.fit(train_x, train_y)
     return model
-
 
 # Decision Tree Classifier
 def decision_tree_classifier(train_x, train_y):
@@ -74,7 +47,6 @@ def decision_tree_classifier(train_x, train_y):
     model.fit(train_x, train_y)
     return model
 
-
 # GBDT(Gradient Boosting Decision Tree) Classifier
 def gradient_boosting_classifier(train_x, train_y):
     from sklearn.ensemble import GradientBoostingClassifier
@@ -82,14 +54,12 @@ def gradient_boosting_classifier(train_x, train_y):
     model.fit(train_x, train_y)
     return model
 
-
 # SVM Classifier
 def svm_classifier(train_x, train_y):
     from sklearn.svm import SVC
     model = SVC(kernel='rbf', probability=True)
     model.fit(train_x, train_y)
     return model
-
 
 # SVM Classifier using cross validation
 def svm_cross_validation(train_x, train_y):
@@ -105,19 +75,6 @@ def svm_cross_validation(train_x, train_y):
     model = SVC(kernel='rbf', C=best_parameters['C'], gamma=best_parameters['gamma'], probability=True)
     model.fit(train_x, train_y)
     return model
-
-
-def read_data(data_file):
-    import gzip
-    f = gzip.open(data_file, "rb")
-    train, val, test = pickle.load(f)
-    f.close()
-    train_x = train[0]
-    train_y = train[1]
-    test_x = test[0]
-    test_y = test[1]
-    return train_x, train_y, test_x, test_y
-
 
 if __name__ == '__main__':
     data_file = "mnist.pkl.gz"
@@ -161,15 +118,3 @@ if __name__ == '__main__':
 
     if model_save_file != None:
         pickle.dump(model_save, open(model_save_file, 'wb'))
-'''
-from snownlp import SnowNLP
-label_file = open('data/Test.csv', encoding='utf-8')
-label_data = label_file.readlines()
-label_file.close()
-pos={}
-result = open('data/TestSentiment.csv','w' ,encoding='utf-8')
-for line in label_data:
-    l1 = line.strip()
-    line=line.split('\t')
-    s=SnowNLP(line[1])
-    result.write('%s\t%.8f\n' % (line[0],s.sentiments))
