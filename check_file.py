@@ -123,7 +123,6 @@ print('召回率是：'+str(r*100)+'%')
 print('F1是：'+str(f1*100)+'%')
 print('实际_预测:pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg',pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg)
 '''
-
 正确的情感分析数：17089
 错误的情感分析数：2978
 漏判的视角数：549
