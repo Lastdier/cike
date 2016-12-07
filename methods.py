@@ -1,6 +1,6 @@
 import jieba
 import re
-
+import jieba.posseg
 # 加载特殊视角词表
 def load_table(source,type):
     path=open(source, encoding='utf-8')
@@ -45,37 +45,105 @@ def getCompSentence(views, line):
 def listTostring(list):
     outStr = ' '
     for word in list:
-        outStr += word
+        outStr += word[0]
+        outStr += word[1]
         outStr += ' '
     return outStr
 
+def getPosseg(string,StopWords):
+    result=[]
+    words = jieba.posseg.cut(string)
+    for word,flag in words:
+        if(StopWords.get(word) is None):
+            result.append((word,flag))
+    print(result)
+    return result
+#删除一些共现的词,比如东风日产和日产同时出现，不用日产
+def removeAmbiguous(word,views,list):
+    for l in list:
+        if(l in views):
+            views.remove(word)
+            break
+    return views
+
+#得到一些歧义视角词，在Views里面没有的
+def getAmbiousViews(views,temp_comment):
+    ambiguous = ['风光', '标志', '发现', '阳光']
+    for view in ambiguous:
+        str1='跟'+view
+        str2 = '，' + view
+        str3 = '、' + view
+        str4 = '代' + view
+        str5 = ' ' + view
+        str6 = '—' + view
+        if(str1 in temp_comment or str2 in temp_comment or str3 in temp_comment or str4 in temp_comment or str5 in temp_comment or str6 in temp_comment):
+            views.append(view)
+            break
+    return views
+
+#主要是为了比如北京现代 时尚 同时出现被误判
+def removeSpecialViews(views,temp_comment):
+    if('道奇挑战者' not in views and '道奇' in temp_comment and '挑战者' in temp_comment):
+        views.append('挑战者')
+    if('现代' in views):
+        p = r'.*(现代.*传统).*|.*(传统.*现代).*|.*(现代.*时尚).*|.*(时尚.*现代).*|.*(现代.*科技).*|.*(科技.*现代).*|.*(音乐.*现代).*|.*(现代.*音乐).*|.*(现代.*经典).*|.*(经典.*现代).*|.*(现代.*绅士).*|.*(绅士.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*服务).*|.*(服务.*现代).*.*(现代.*中国).*|.*(中国.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*农业).*|.*(农业.*现代).*|.*(现代.*教育).*|.*(教育.*现代).*|.*(现代.*美).*|.*(美.*现代).*|.*(现代.*人).*|.*(人.*现代).*'
+        if len(re.findall(p, temp_comment)) > 0:
+            views.remove('现代')
+    if ('日产' in views):
+        richan = ['东风日产', '日产轩逸', '日产奇骏']
+        views=removeAmbiguous('日产',views,richan)
+    if('大众tiguan' in views and '大众' in views):
+        views.remove('大众')
+    if ('大众tiguan' in views and 'tiguan' in views):
+        views.remove('tiguan')
+    if('上汽通用五菱' in views and '五菱' in views):
+        views.remove('五菱')
+    if ('高尔夫' in views):
+        richan = ['大众高尔夫', '大众高尔夫7', '大众一汽高尔夫','别克高尔夫']
+        views = removeAmbiguous('高尔夫', views, richan)
+    if ('盖世' in views):
+        richan = ['比亚迪宋', '比亚迪', '宋']
+        views = removeAmbiguous('盖世', views, richan)
+    if ('丰田' in views):
+        richan = ['丰田卡罗拉', '丰田酷路泽4600','一汽丰田卡罗拉']
+        views = removeAmbiguous('丰田', views, richan)
+    if ('迈锐宝xl' in views):
+        richan = ['雪佛兰迈锐宝xl']
+        views = removeAmbiguous('迈锐宝xl', views, richan)
+    return views
+
+#处理歧义，比如比速腾，要的是速腾不是比速
+def getSpecialV(views,comment):
+    Views=load_table('data/Views.csv',1)
+    for view in Views:
+        str='小'+view
+        str1='大'+view
+        str2='比'+view
+        if(comment.__contains__(str) or comment.__contains__(str1) or comment.__contains__(str2)):
+            views.append(view)
+            comment=comment.replace(view,'')
+    return views,comment
+
 #处理含中文的视角词
 def preNormalViews(str):
+    if(str.__contains__('东南汽车')==False):
+        str=str.replace('汽车','')
     #处理产生歧义的词
-    p = r".*(现代.*传统).*|.*(传统.*现代).*|.*(现代.*时尚).*|.*(时尚.*现代).*|.*(现代.*科技).*|.*(科技.*现代).*|.*(音乐.*现代).*|.*(现代.*音乐).*|.*(现代.*经典).*|.*(经典.*现代).*|.*(现代.*绅士).*|.*(绅士.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*服务).*|.*(服务.*现代).*.*(现代.*中国).*|.*(中国.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*农业).*|.*(农业.*现代).*|.*(现代.*教育).*|.*(教育.*现代).*|.*(现代.*美).*|.*(美.*现代).*|.*(现代.*人).*|.*(人.*现代).*"
-    if len(re.findall(p, str)) > 0:
-        str = str.replace('现代', '')
-    lists=['汽车','狗狗Polo','大火中的Polo','1.4TEA211','长安宝宝','迈腾全国猪价资讯','XDS','Cross Lavida','Der Yeti in Berlin','Yak Yeti酒店','别克制','高尔夫度假酒店','','']
+    lists=[' 200T','狗狗Polo','大火中的Polo','1.4TEA211','长安宝宝','迈腾全国猪价资讯','XDS','Cross Lavida','Der Yeti in Berlin','Yak Yeti酒店','别克制','高尔夫度假酒店','','']
     # 现代出现了557次，然后有很多会导致歧义！
     xiandai = ['现代消费者','更现代','期待现代','现代学徒','现代奥运会','现代企业','现代露天剧场','现代风格','现代化','现代人','现代龙泉青','现代生活','既现代','融入现代','组成现代','现代文化','现代文明','现代交通安全','现代五项队','现代职业教育','现代豪华','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','回现代']
     # 大众出现了300+次，然后有很多会导致歧义！
-    dazhong = ['大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI']
+    dazhong = ['C级豪华','C级全新','C级高端','c级车','C级车','大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI','DSG','dsg','TSI','现代灵感','现代气息','又现代','现代的活力','现代工业','历史与现代','现代级','现代电影院','现代物流','现代功能','现代医学','现代高端','现代钢琴','现代卫浴','现代科学']
     str = replace(str, lists)
     str = replace(str, xiandai)
     str = replace(str, dazhong)
     str = str.replace('一汽吉林4S店', '一汽')
-    str = str.replace('比速腾', '速腾')
-    lists = ['1.4TEA211', 'Yak Yeti酒店', '别克制', '高尔夫度假酒店', '唐山', '唐僧', '唐太宗', '唐古', '后唐', '唐都', '唐侯', '唐斌',
-             '唐唯实', '展唐科技', '唐装', '唐朝', '盛唐改装', '唐河','suv','科技']
+    lists = ['ESP','[熊猫]','1.4TEA211', 'Yak Yeti酒店', '别克制', '高尔夫度假酒店', '唐山', '唐僧', '唐太宗', '唐古', '后唐', '唐都', '唐侯', '唐斌',
+             '唐唯实', '展唐科技', '唐装', '唐朝', '盛唐改装', '唐河','suv','科技','EA888','大众化','汽车城','dsc','马丁脸','esp','比速度','大中华','中华人民','中华民族','中华元素','中华艺术宫','实现中华','中华商业','中华全国']
     str = replace(str, lists)
-    str = str.replace('小夏利', '夏利')
-    str = str.replace('小夏朗', '夏朗')
-    str = str.replace('比速腾', '速腾')
-    str = str.replace('大众泰', '众泰')
-    str = str.replace('上海通用汽车', '上海通用')
-    str = str.replace('进口大众尚酷DSG', '大众尚酷DSG')
     str = str.replace('[起亚律动]', '')
     str = str.replace('变形金刚', '')
+    str = str.replace('[Lavida生活]', '')
     str = str.replace('雷克萨斯rx200t', '雷克萨斯rx')
     return str
 
@@ -84,7 +152,7 @@ def preSpecialViews(str):
     # 处理带有单位的数字
     lists = ['qq群', 'qq号', '@qq']
     str = replace(str, lists)
-    pattern = r'\d+[元|万|转|幅|马|款|米|年|多|人|台|辆|名|公|月]|\d+rpm|\d+公里|\d+积分|\d+月\d+日|\d+n·m|\d\.\d\t|\d\.\d排量|\d\.\dl|\d+\-\d+'
+    pattern = r'\d+[元|万|转|幅|马|款|米|年|多|人|台|辆|名|公|月]|\d+rpm|\d+公里|\d+mm|\d+积分|\d+月\d+日|\d+n·m|\d\.\d\t|\d\.\d排量|\d\.\dl|\d+\-\d+'
     for word in re.findall(pattern, str):
         str = str.replace(word, '数量')
     return str
@@ -120,41 +188,46 @@ def load_dict(source):
         view[line]=1
     return view
 
-
 # 删除不需要的词，将剩余的词转换为list
-def word_filter(string, StopWords):
-    result = []
+def word_filter(string,StopWords):
+    result=[]
     words = jieba.cut(string)
     for word in words:
-        if StopWords.get(word) is None:
+        if(StopWords.get(word) is None):
             result.append(word)
     return result
-
 
 #得到合并的视角词,比如:a4q5D3
 def getSpecilaView(str,SpecialViews):
     views=[]
     SpecialView=list(SpecialViews)
     SpecialView.sort(key=lambda x: len(x), reverse=True)
-    for view in SpecialView:
-        if(str.__contains__(view)):
-            str=str.replace(view,'')
-            views.append(view)
-    if(str=='' or str.isdigit()):
-        pass
+    if (len(re.findall('^[0-9]+$', str)) > 0):
+        for view in SpecialView:
+            if (str.__contains__(view)):
+                str = str.replace(view, '')
+                views.append(view)
+        if (str == '' or str.isdigit()):
+            pass
+        else:
+            views = []
     else:
-        views=[]
+        for view in SpecialView:
+            temp = view
+            temp_comment = str.replace(view, '')
+            temp += temp_comment
+            if (temp == str):
+                views.append(view)
+                break
     return views
-
 
 def search_features_and_wight(word_list, features_list):
     num_of_features = len(features_list)
     result = [0.] * num_of_features
     for word in word_list:
-        if not features_list.get(word) is None:
+        if(features_list.get(word)is not None):
             result[features_list[word][0]] += float(features_list[word][1])
     return result
-
 
 # 加载字典
 def get_features(dict_name, k):
@@ -174,7 +247,9 @@ def get_features(dict_name, k):
 
 #得到句子中的所有视角词
 def getViews(comment,NormaleViews,SpecialViews):
-    views = []
+    temp_comment=comment
+    views=[]
+    #得到一些特殊视角词,例如小夏利：小夏 夏利 应该是夏利
     # 处理中文的歧义视角
     comment = preNormalViews(comment)
     # 找出普通视角词
@@ -182,6 +257,8 @@ def getViews(comment,NormaleViews,SpecialViews):
         if (comment.__contains__(view) == True):
             views.append(view)
             comment = comment.replace(view, '')
+    if ('小' in comment or '大' in comment or '比' in comment):
+        views,comment = getSpecialV(views,comment)
     # 处理含数字的歧义视角
     comment=preSpecialViews(comment)
     temp_views = jieba.cut(comment)
@@ -190,10 +267,13 @@ def getViews(comment,NormaleViews,SpecialViews):
             views.append(word)
         else:
             # 处理英文+数字的视角
-            if ((re.match('^[0-9a-zA-Z]+$', word)) and word.isalpha() == False and (word.isdigit() == False)):
+            if (len(re.findall('^[a-zA-Z]+$',word))>0):
                 for view in getSpecilaView(word, SpecialViews):
                     views.append(view)
     views = list(set(views))
+    if('风光' in views or '标志' in views or '阳光' in views or '发现' in views):
+        views=getAmbiousViews(views,temp_comment)
+    views=removeSpecialViews(views,temp_comment)
     return views
 
 #得到含有视角词的句子以及无视角词的句子
