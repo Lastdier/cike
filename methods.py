@@ -225,9 +225,11 @@ def search_features_and_wight(word_list, features_list):
     num_of_features = len(features_list)
     result = [0.] * num_of_features
     for word in word_list:
-        if(features_list.get(word)is not None):
-            result[features_list[word][0]] += float(features_list[word][1])
+        if not features_list.get(word) is None:
+            foo = features_list[word][0]
+            result[features_list[word][0] - 1] += float(features_list[word][1])
     return result
+
 
 # 加载字典
 def get_features(dict_name, k):
@@ -237,11 +239,13 @@ def get_features(dict_name, k):
     features = {}
     count = 0
     for line in data:
-        if((count+1)>k):
+        if count >= k:
             break
         l1 = line.strip()
         this_line = l1.split('\t')
-        features[this_line[0]]= [count,this_line[1]]
+        if not len(this_line) == 2:
+            continue
+        features[this_line[0]] = [count, this_line[1]]
         count += 1
     return features
 
