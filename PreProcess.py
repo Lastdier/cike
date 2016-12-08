@@ -270,7 +270,7 @@ def getDict(trainname,labelname,stopWords,pospath,negpath):
     neg = open(negpath, 'w', encoding='utf-8')
     for word in word_occur:
         # 去除视角词,去除停用词表,然后只要有中文的
-        if (views.get(word) is not None or re.match('^[\u4e00-\u9fa5]+$', word) == None):
+        if (views.get(word) is not None or word==' '):
             continue
         if (word_pos_w[word] > 0):
             pos_wc.append((word, word_pos_w[word]))
@@ -305,10 +305,10 @@ def getStopWords(filename,StopName,NormaleViews,SpecialViews):
         words = jieba.posseg.cut(comment)
         for word,flag in words:
             #不要的;x u p q m p
-            if(stopWords.get(word) is None and (flag=='m' or flag=='x' or flag=='p' or flag=='q' or flag=='u' or re.match('^[0-9a-zA-Z]+$',word))):
+            if(stopWords.get(word) is None and (flag=='m' or flag=='x' or flag=='p' or flag=='q' or flag=='u' or word.isdigit())==True):
                 stopWords[word]=1
-                if (ImportangWords.get(word) is None):
-                    pathName.write(word + '\n')
+                #if (ImportangWords.get(word) is None):
+                pathName.write(word + '\n')
 
 #利用snownlp,得到数据集中每个句子的情感为积极的概率，输出文件格式为：句子ID+句子情感为积极的概率
 def get_SentenceSentiment(filename,pathname):
@@ -322,6 +322,28 @@ def get_SentenceSentiment(filename,pathname):
         s = SnowNLP(line[1])
         result.write('%s\t%.8f\n' % (line[0], s.sentiments))
 
+def mergeStopWords(trainname,testname,pathname):
+    stop_word = []
+    test = open(trainname,encoding='utf-8')
+    test_data = test.readlines()
+    test.close()
+    for line in test_data:
+        l1 = line.strip()
+        stop_word.append(l1)
+
+    train = open(testname,encoding='utf-8')
+    train_data = train.readlines()
+    train.close()
+    for line in train_data:
+        l1 = line.strip()
+        stop_word.append(l1)
+
+    stop_word=list(set(stop_word))
+    output = open(pathname, 'w', encoding='utf-8')
+    for word in stop_word:
+        output.write(word + '\n')
+    output.close()
+
 #得到情感词典
 NormaleViews=load_table('data/NormalViews.csv',1)
 SpecialViews = load_dict('data/SpecialViews.csv')
@@ -330,7 +352,9 @@ trainname='data/Train.csv'
 labelname='data/Label.csv'
 testname='data/Test.csv'
 #输出的停用词表的文件名称
-StopName='data/Test_Stopwords.csv'
+Train_StopName='data/Train_Stopwords.csv'
+Test_StopName='data/Test_Stopwords.csv'
+StopName='data/Stopwords.csv'
 #输出的情感词典的文件名称
 pospath='data/pos_dict.csv'
 negpath='data/neg_dict.csv'
@@ -340,32 +364,40 @@ ViewPathname='data/Views.csv'
 NormalName='data/NormalViews.csv'
 SpecialName='data/SpecialViews.csv'
 #句子的情感概率值文件名称
-SentenceName='data/TrainSentiment.csv'
+Train_SentenceName='data/TrainSentiment.csv'
+Test_SentenceName='data/TestSentiment.csv'
 #主要是得到视角词，输入是AllViews,输出是Views+SpecialViews+NormalViews
 iTime=time.time()
-#views=getFirstView(Allviews)
+views=getFirstView(Allviews)
 eTime=time.time()
 print("得到基础视角表总共用时：" + str(eTime - iTime))
 iTime=time.time()
-#getSecondView(views,testname,ViewPathname)
+getSecondView(views,testname,ViewPathname)
 eTime=time.time()
 print("得到总视角表总共用时：" + str(eTime - iTime))
 iTime=time.time()
-#SegViews(ViewPathname,NormalName,SpecialName,)
+SegViews(ViewPathname,NormalName,SpecialName,)
 eTime=time.time()
 print("拆分总视角表总共用时：" + str(eTime - iTime))
 #得到停用词表，输入是数据集+SpecialViews+NormalViews，输入是StopWords.csv
 itime=time.time()
-#getStopWords(trainname,StopName,NormaleViews,SpecialViews)
+#getStopWords(trainname,Train_StopName,NormaleViews,SpecialViews)
+#getStopWords(testname,Test_StopName,NormaleViews,SpecialViews)
 etime=time.time()
 print('得到停用词表总共用时:'+str(etime-itime))
+#合并停用词表，输入是数据集+Train_STOP+tEST_STOP，输入是StopWords.csv
+itime=time.time()
+#mergeStopWords(Train_StopName,Test_StopName,StopName)
+etime=time.time()
+print('合并停用词表总共用时:'+str(etime-itime))
 #得到情感词典，输入是文件名称+停用词表，输出是积极情感词典+消极情感词典
 stopWords = load_dict(StopName)
 itime=time.time()
-getDict(trainname,labelname,stopWords,pospath,negpath)
+#getDict(trainname,labelname,stopWords,pospath,negpath)
 etime=time.time()
 print('得到情感词典总共用时:'+str(etime-itime))
 iTime=time.time()
-#get_SentenceSentiment(trainname,SentenceName)
+#get_SentenceSentiment(trainname,Train_SentenceName)
+#get_SentenceSentiment(testname,Test_SentenceName)
 eTime=time.time()
 print("得到句子的情感概率值总共用时：" + str(eTime - iTime))

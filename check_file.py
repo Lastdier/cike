@@ -9,10 +9,10 @@ zhaodanshijiao={}
 tp, fp, fn1, fn2 = 0, 0, 0, 0
 #实际_预测
 pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg=0,0,0,0,0,0
-label_file = open('data/Label.csv', encoding='utf-8')
+label_file = open('data/Label_test.csv', encoding='utf-8')
 label_data = label_file.readlines()
 label_file.close()
-StopWords = load_dict('data/StopWords.csv')
+StopWords = load_dict('data/StopWords.txt')
 flag=False
 temp_id=0
 for line in label_data:
@@ -54,7 +54,7 @@ result_data = result_file.readlines()
 result_file.close()
 for line in result_data:
     l1 = line.strip()
-    content = l1.split(',')
+    content = l1.split('\t')
     if not len(content) == 3:
         continue
     comment_id = content[0]
@@ -78,9 +78,9 @@ for line in result_data:
         tp += 1
     else:
         fp += 1
-        wrong_data.write(
-            comment_id + '\t' + '实际情感:' + check_data[comment_id][comment_view] + ' 预测情感:' + view_emotion + '\t' +
-            Train_data[comment_id] + '\n')
+        #wrong_data.write(
+            #comment_id + '\t' + '实际情感:' + check_data[comment_id][comment_view] + ' 预测情感:' + view_emotion + '\t' +
+            #Train_data[comment_id] + '\n')
         #if (Train_data[comment_id].__contains__('然而') or Train_data[comment_id].__contains__('但是')):
             #word_list = word_filter(Train_data[comment_id], StopWords)
             #wrong_data.write(Train_data[comment_id] +' 分词结果'+listTostring(word_list) +'\n')
@@ -120,13 +120,23 @@ print('准确率是：'+str(p*100)+'%')
 print('召回率是：'+str(r*100)+'%')
 print('F1是：'+str(f1*100)+'%')
 print('实际_预测:pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg',pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg)
+
 '''
-正确的情感分析数：17089
-错误的情感分析数：2978
-漏判的视角数：549
-无效(多判)的视角数：1669
-准确率是：78.62072138387927%
-召回率是：96.88740219979589%
-F1是：86.80347437395235%
-实际_预测:pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg 1771 13 625 47 463 57
+正确的情感分析数：4611
+错误的情感分析数：1821
+漏判的视角数：260
+无效(多判)的视角数：782
+准确率是：63.91738286664819%
+召回率是：94.66228700472182%
+F1是：76.30947455523376%
+实际_预测:pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg 921 13 338 35 467 46
+
+正确的情感分析数：4543
+错误的情感分析数：1889
+漏判的视角数：260
+无效(多判)的视角数：782
+准确率是：62.97477127807042%
+召回率是：94.58671663543619%
+F1是：75.6095531330615%
+实际_预测:pos_neu,pos_neg,neg_neu,neg_pos,neu_pos,neu_neg 909 12 325 34 453 47
 '''

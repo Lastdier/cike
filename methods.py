@@ -52,21 +52,21 @@ def listTostring(list):
 #处理含中文的视角词
 def preNormalViews(str):
     #处理产生歧义的词
-    p = r".*(现代.*传统).*|.*(传统.*现代).*|.*(现代.*时尚).*|.*(时尚.*现代).*|.*(现代.*科技).*|.*(科技.*现代).*|.*(音乐.*现代).*|.*(现代.*音乐).*|.*(现代.*经典).*|.*(经典.*现代).*|.*(现代.*绅士).*|.*(绅士.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*服务).*|.*(服务.*现代).*.*(现代.*中国).*|.*(中国.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*农业).*|.*(农业.*现代).*|.*(现代.*教育).*|.*(教育.*现代).*|.*(现代.*美).*|.*(美.*现代).*|.*(现代.*人).*|.*(人.*现代).*"
-    if len(re.findall(p, str)) > 0:
+    p = r'.*(现代.*传统).*|.*(传统.*现代).*|.*(现代.*时尚).*|.*(时尚.*现代).*|.*(现代.*科技).*|.*(科技.*现代).*|.*(音乐.*现代).*|.*(现代.*音乐).*|.*(现代.*经典).*|.*(经典.*现代).*|.*(现代.*绅士).*|.*(绅士.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*服务).*|.*(服务.*现代).*.*(现代.*中国).*|.*(中国.*现代).*|.*(现代.*文明).*|.*(文明.*现代).*|.*(现代.*农业).*|.*(农业.*现代).*|.*(现代.*教育).*|.*(教育.*现代).*|.*(现代.*美).*|.*(美.*现代).*|.*(现代.*人).*|.*(人.*现代).*'
+    if len(re.findall(p,str))> 0:
         str = str.replace('现代', '')
-    lists=['汽车','狗狗Polo','大火中的Polo','1.4TEA211','长安宝宝','迈腾全国猪价资讯','XDS','Cross Lavida','Der Yeti in Berlin','Yak Yeti酒店','别克制','高尔夫度假酒店','','']
+    lists=['狗狗Polo','大火中的Polo','1.4TEA211','长安宝宝','迈腾全国猪价资讯','XDS','Cross Lavida','Der Yeti in Berlin','Yak Yeti酒店','别克制','高尔夫度假酒店','','']
     # 现代出现了557次，然后有很多会导致歧义！
     xiandai = ['现代消费者','更现代','期待现代','现代学徒','现代奥运会','现代企业','现代露天剧场','现代风格','现代化','现代人','现代龙泉青','现代生活','既现代','融入现代','组成现代','现代文化','现代文明','现代交通安全','现代五项队','现代职业教育','现代豪华','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','回现代']
     # 大众出现了300+次，然后有很多会导致歧义！
-    dazhong = ['大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI']
+    dazhong = ['大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI','DSG','dsg','TSI','现代灵感','现代气息','又现代','现代的活力','现代工业','历史与现代','现代级','现代电影院','现代物流','现代功能','现代医学','现代高端','现代钢琴','现代卫浴','现代科学']
     str = replace(str, lists)
     str = replace(str, xiandai)
     str = replace(str, dazhong)
     str = str.replace('一汽吉林4S店', '一汽')
     str = str.replace('比速腾', '速腾')
     lists = ['1.4TEA211', 'Yak Yeti酒店', '别克制', '高尔夫度假酒店', '唐山', '唐僧', '唐太宗', '唐古', '后唐', '唐都', '唐侯', '唐斌',
-             '唐唯实', '展唐科技', '唐装', '唐朝', '盛唐改装', '唐河','suv','科技']
+             '唐唯实', '展唐科技', '唐装', '唐朝', '盛唐改装', '唐河','suv','科技','EA888']
     str = replace(str, lists)
     str = str.replace('小夏利', '夏利')
     str = str.replace('小夏朗', '夏朗')
@@ -85,7 +85,7 @@ def preSpecialViews(str):
     # 处理带有单位的数字
     lists = ['qq群', 'qq号', '@qq']
     str = replace(str, lists)
-    pattern = r'\d+[元|万|转|幅|马|款|米|年|多|人|台|辆|名|公|月]|\d+rpm|\d+公里|\d+积分|\d+月\d+日|\d+n·m|\d\.\d\t|\d\.\d排量|\d\.\dl|\d+\-\d+'
+    pattern = r'\d+[元|万|转|幅|马|款|米|年|多|人|台|辆|名|公|月]|\d+rpm|\d+公里|\d+mm|\d+积分|\d+月\d+日|\d+n·m|\d\.\d\t|\d\.\d排量|\d\.\dl|\d+\-\d+'
     for word in re.findall(pattern, str):
         str = str.replace(word, '数量')
     return str
@@ -135,14 +135,23 @@ def getSpecilaView(str,SpecialViews):
     views=[]
     SpecialView=list(SpecialViews)
     SpecialView.sort(key=lambda x: len(x), reverse=True)
-    for view in SpecialView:
-        if(str.__contains__(view)):
-            str=str.replace(view,'')
-            views.append(view)
-    if(str=='' or str.isdigit()):
-        pass
+    if (len(re.findall('^[0-9]+$', str)) > 0):
+        for view in SpecialView:
+            if (str.__contains__(view)):
+                str = str.replace(view, '')
+                views.append(view)
+        if (str == '' or str.isdigit()):
+            pass
+        else:
+            views = []
     else:
-        views=[]
+        for view in SpecialView:
+            temp = view
+            temp_comment = str.replace(view, '')
+            temp += temp_comment
+            if (temp == str):
+                views.append(view)
+                break
     return views
 
 def search_features_and_wight(word_list, features_list):
@@ -187,7 +196,7 @@ def getViews(comment,NormaleViews,SpecialViews):
             views.append(word)
         else:
             # 处理英文+数字的视角
-            if ((re.match('^[0-9a-zA-Z]+$', word)) and word.isalpha() == False and (word.isdigit() == False)):
+            if (len(re.findall('^[a-zA-Z]+$',word))>0):
                 for view in getSpecilaView(word, SpecialViews):
                     views.append(view)
     views = list(set(views))
