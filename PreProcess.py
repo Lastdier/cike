@@ -99,6 +99,7 @@ def getSecondView(views,testname,ViewPathname):
     '''
     #去除重复的视角词
     views=list(set(list(views)))
+    views.remove('')
     #列表按长度降序排序
     views.sort(key=lambda x:len(x),reverse=True)
     for view in views:
@@ -348,7 +349,7 @@ def mergeStopWords(trainname,testname,pathname):
 NormaleViews=load_table('data/NormalViews.csv',1)
 SpecialViews = load_dict('data/SpecialViews.csv')
 #输入的文件名称
-trainname='data/Train.csv'
+trainname='result/Tre'
 labelname='data/Label.csv'
 testname='data/Test.csv'
 #输出的停用词表的文件名称
@@ -393,7 +394,7 @@ print('合并停用词表总共用时:'+str(etime-itime))
 #得到情感词典，输入是文件名称+停用词表，输出是积极情感词典+消极情感词典
 stopWords = load_dict(StopName)
 itime=time.time()
-#getDict(trainname,labelname,stopWords,pospath,negpath)
+getDict(trainname,labelname,stopWords,pospath,negpath)
 etime=time.time()
 print('得到情感词典总共用时:'+str(etime-itime))
 iTime=time.time()

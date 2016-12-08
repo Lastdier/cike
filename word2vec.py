@@ -1,7 +1,9 @@
 from gensim.models import word2vec
 import numpy as np
 
+
 model = word2vec.Word2Vec.load('data/word_vec.model')
+
 weight = open('data/weight.csv', encoding='utf-8')
 weight_data = weight.readlines()
 weight.close()
@@ -12,6 +14,7 @@ for kkk in weight_data:
     if not len(l2) == 2:
         continue
     weight_dict[l2[0]] = float(l2[1])
+
 
 # 输入为分好词的列表
 def get_vec(word_list):
