@@ -58,7 +58,6 @@ for ttt in uni_data:
     unigram_pos_dict[l2[0]] = float(l2[1])
     unigram_neg_dict[l2[0]] = float(l2[2]) * (193.33 / 266.31)
 
-
 def create_training_set(num_of_train):
     result_X = []         # 结果
     result_Y = []         # 分类结果
@@ -103,24 +102,12 @@ def create_training_set(num_of_train):
         else:
             view_list = label_ref[this_comment_id]
         view_count = len(view_list)  # 读取视角数
-
+        views=[]
+        for s in range(view_count):
+            views.append(view_list[s][0])
         this_lines = re.split('。|,|，|:|：|；|\n', this_comment)
         for this_view, motion in view_list:
-            strour = ''
-            temp = 0
-            for j in range(len(this_lines)):
-                temp_len = 0
-                if this_view in this_lines[j]:
-                    strour += this_lines[j]
-                    temp = j
-                elif strour != '':
-                    for s in range(view_count):
-                        if not view_list[s][0] in this_lines[j]:
-                            temp_len += 1
-                    if temp_len == view_count and j > temp:
-                        strour += this_lines[j]
-                        temp = j
-
+            strour = getSentence(this_view,views,this_lines)
             # 去停前识别二元组
             this_unfiltered = jieba.cut(strour)
             this_unfiltered_list = []
@@ -187,9 +174,9 @@ def create_training_set(num_of_train):
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 TOTAL_NUMBER_OF_TRAIN = 14533
-NUM_OF_TRAIN = 10000
-TEST_FILE = 'Train.csv'
-OUTPUT_FILE = 'result_3.csv'
+NUM_OF_TRAIN = 14533
+TEST_FILE = 'Test.csv'
+OUTPUT_FILE = 'result.csv'
 itime = time.time()
 
 # 加载词典
@@ -214,7 +201,7 @@ line_count = 0
 
 # 读取snownlp的结果
 sentiment_dict = {}
-test_sentiment = open('data/TrainSentiment.csv', encoding='utf-8')
+test_sentiment = open('data/TestSentiment.csv', encoding='utf-8')
 sentiment_data = test_sentiment.readlines()
 test_sentiment.close()
 for jjj in sentiment_data:
@@ -226,8 +213,6 @@ for jjj in sentiment_data:
 
 for line in test_data:
     line_count += 1
-    if not line_count > NUM_OF_TRAIN:
-        continue
     l1 = line.strip()
     l2 = l1.split('\t')
     if not len(l2) == 2:
@@ -236,14 +221,13 @@ for line in test_data:
     comment = l2[1]
     # 识别视角
     views = getViews(comment, NormaleViews, SpecialViews)
-
     # 规则？
     # 用于存放经过规则处理之后应删除的视角
     remove_views = []
     # 处理比较句
     compViews = getCompSentence(views, l2[1])
     for comview in compViews:
-        result_file.write('%s\t%s\t%d\n' % (comment_id, comview, 0))
+        result_file.write('%s,%s,%s\n' % (comment_id, comview,'neu'))
         remove_views.append(comview)
     # 把比较句中的视角词删除了，避免有些视角词同时出现在特殊句式中，这里还有个优先级待做
     for view in remove_views:
@@ -252,18 +236,16 @@ for line in test_data:
     # 处理反比句
     comviews = getInverseSen(views, l2[1])
     for comview in comviews:
-        result_file.write('%s\t%s\t%d\n' % (comment_id, comview, 0))
+        result_file.write('%s,%s,%s\n' % (comment_id, comview,'neu'))
         remove_views.append(comview)
     for view in remove_views:
         views.remove(view)
     if views == []:
         continue
-
     # 分类器判断
     lines = re.split('。|,|，|:|：|；|\n', l2[1])
     for i in range(len(views)):
         sentence = getSentence(views[i], views, lines)
-
         # 去停前识别bigram
         unfiltered = jieba.cut(sentence)
         unfiltered_list = []
@@ -311,7 +293,6 @@ for line in test_data:
         if not count == 0:
             pos_uni_feature = pos_uni_feature / count
             neg_uni_feature = neg_uni_feature / count
-
         word_vec = get_vec(words_list)                              # 200维词向量
         snownlp_result = sentiment_dict[comment_id]                 # snownlp情感分析结果作为1个维度
         word_vec.append(snownlp_result)
@@ -320,7 +301,15 @@ for line in test_data:
         word_vec.append(pos_uni_feature - neg_uni_feature)
         test_x = [word_vec]
         test_y = clf.predict(test_x)
-        result_file.write('%s\t%s\t%d\n' % (comment_id, views[i], test_y[0]))
+        if (int(test_y[0]) == 0):
+            if(sentence.__contains__('召回') or sentence.__contains__('自燃')):
+                result_file.write('%s,%s,%s\n' % (comment_id, views[i], 'neg'))
+            else:
+                result_file.write('%s,%s,%s\n' % (comment_id, views[i], 'neu'))
+        elif (int(test_y[0]) == 1):
+            result_file.write('%s,%s,%s\n' % (comment_id, views[i], 'pos'))
+        elif (int(test_y[0]) == -1):
+            result_file.write('%s,%s,%s\n' % (comment_id, views[i], 'neg'))
 result_file.close()
 t = time.time()
 print('共用时'+str(t-itime))

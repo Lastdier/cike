@@ -1,6 +1,7 @@
 import jieba
 import re
 import jieba.posseg
+import math
 # 加载特殊视角词表
 def load_table(source,type):
     path=open(source, encoding='utf-8')
@@ -31,6 +32,7 @@ def getInverseSen(views, line):
 def getCompSentence(views, line):
     comviews = []
     for view in views:
+
         s1 = '与' + view + '相比'
         s2 = '比' + view
         s3 = '超越' + view
@@ -43,11 +45,9 @@ def getCompSentence(views, line):
     return comviews
 
 def listTostring(list):
-    outStr = ' '
+    outStr = ''
     for word in list:
-        outStr += word[0]
-        outStr += word[1]
-        outStr += ' '
+        outStr += word
     return outStr
 
 def getPosseg(string,StopWords):
@@ -56,8 +56,8 @@ def getPosseg(string,StopWords):
     for word,flag in words:
         if(StopWords.get(word) is None):
             result.append((word,flag))
-    print(result)
     return result
+
 #删除一些共现的词,比如东风日产和日产同时出现，不用日产
 def removeAmbiguous(word,views,list):
     for l in list:
@@ -68,17 +68,14 @@ def removeAmbiguous(word,views,list):
 
 #得到一些歧义视角词，在Views里面没有的
 def getAmbiousViews(views,temp_comment):
-    ambiguous = ['风光', '标志', '发现', '阳光']
+    ambiguous = ['风光', '标志','阳光','通用']
     for view in ambiguous:
-        str1='跟'+view
-        str2 = '，' + view
-        str3 = '、' + view
-        str4 = '代' + view
-        str5 = ' ' + view
-        str6 = '—' + view
-        if(str1 in temp_comment or str2 in temp_comment or str3 in temp_comment or str4 in temp_comment or str5 in temp_comment or str6 in temp_comment):
+        pattern = r'[跟，、代 —]+'+view+ '+|'+view+ '+[跟，、代 —]+'
+        if (len(re.findall(pattern, temp_comment)) > 0):
             views.append(view)
-            break
+    pattern = r'[跟、代 —]+发现+'
+    if (len(re.findall(pattern, temp_comment)) > 0):
+        views.append('发现')
     return views
 
 #主要是为了比如北京现代 时尚 同时出现被误判
@@ -114,31 +111,27 @@ def removeSpecialViews(views,temp_comment):
 
 #处理歧义，比如比速腾，要的是速腾不是比速
 def getSpecialV(views,comment):
-    Views=load_table('data/Views.csv',1)
+    Views = ['速腾','速派','夏朗','夏利','帕萨特','众泰']
     for view in Views:
-        str='小'+view
-        str1='大'+view
-        str2='比'+view
-        if(comment.__contains__(str) or comment.__contains__(str1) or comment.__contains__(str2)):
+        pattern = r'[小大比]+' + view+'+'
+        if (len(re.findall(pattern,comment)) > 0):
             views.append(view)
             comment=comment.replace(view,'')
     return views,comment
 
 #处理含中文的视角词
 def preNormalViews(str):
-    if(str.__contains__('东南汽车')==False):
-        str=str.replace('汽车','')
     #处理产生歧义的词
-    lists=[' 200T','狗狗Polo','大火中的Polo','1.4TEA211','长安宝宝','迈腾全国猪价资讯','XDS','Cross Lavida','Der Yeti in Berlin','Yak Yeti酒店','别克制','高尔夫度假酒店','','']
+    lists=['东南角','东南越蛇种','东东南','东南边','东南枝','东南倾','东南西北','东南亚','东南地区','薛东南','前麦弗逊','麦弗逊前','捷克姆拉达','Václav',' 200T','狗狗Polo','大火中的Polo','1.4TEA211','长安宝宝','迈腾全国猪价资讯','XDS','Cross Lavida','Der Yeti in Berlin','Yak Yeti酒店','别克制','高尔夫度假酒店','','']
     # 现代出现了557次，然后有很多会导致歧义！
-    xiandai = ['现代消费者','更现代','期待现代','现代学徒','现代奥运会','现代企业','现代露天剧场','现代风格','现代化','现代人','现代龙泉青','现代生活','既现代','融入现代','组成现代','现代文化','现代文明','现代交通安全','现代五项队','现代职业教育','现代豪华','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','回现代']
+    xiandai = ['地球梦发动机','地球梦科技','现代消费者','更现代','期待现代','现代学徒','现代奥运会','现代企业','现代露天剧场','现代风格','现代化','现代人','现代龙泉青','现代生活','既现代','融入现代','组成现代','现代文化','现代文明','现代交通安全','现代五项队','现代职业教育','现代豪华','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','现代艺术','现代诗歌','近现代','后现代','现代感','现代天地','现代豪华','现代制药','现代农业','现代都市','回现代']
     # 大众出现了300+次，然后有很多会导致歧义！
-    dazhong = ['C级豪华','C级全新','C级高端','c级车','C级车','大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI','DSG','dsg','TSI','现代灵感','现代气息','又现代','现代的活力','现代工业','历史与现代','现代级','现代电影院','现代物流','现代功能','现代医学','现代高端','现代钢琴','现代卫浴','现代科学']
+    dazhong = ['TSI330','的阳光','C级别','C级豪华','C级全新','C级高端','c级车','C级车','大众旅游','大众资讯','大众喜爱','330御尊','长安福特店','30E','H5FF408','280TSI','DSG','dsg','TSI','现代灵感','现代气息','又现代','现代的活力','现代工业','历史与现代','现代级','现代电影院','现代物流','现代功能','现代医学','现代高端','现代钢琴','现代卫浴','现代科学']
     str = replace(str, lists)
     str = replace(str, xiandai)
     str = replace(str, dazhong)
     str = str.replace('一汽吉林4S店', '一汽')
-    lists = ['ESP','[熊猫]','1.4TEA211', 'Yak Yeti酒店', '别克制', '高尔夫度假酒店', '唐山', '唐僧', '唐太宗', '唐古', '后唐', '唐都', '唐侯', '唐斌',
+    lists = ['MLB','ESP','[熊猫]','1.4TEA211', 'Yak Yeti酒店', '别克制', '高尔夫度假酒店', '唐山', '唐僧', '唐太宗', '唐古', '后唐', '唐都', '唐侯', '唐斌',
              '唐唯实', '展唐科技', '唐装', '唐朝', '盛唐改装', '唐河','suv','科技','EA888','大众化','汽车城','dsc','马丁脸','esp','比速度','大中华','中华人民','中华民族','中华元素','中华艺术宫','实现中华','中华商业','中华全国']
     str = replace(str, lists)
     str = str.replace('[起亚律动]', '')
@@ -221,6 +214,7 @@ def getSpecilaView(str,SpecialViews):
                 break
     return views
 
+	
 def search_features_and_wight(word_list, features_list):
     num_of_features = len(features_list)
     result = [0.] * num_of_features
@@ -251,9 +245,15 @@ def get_features(dict_name, k):
 
 #得到句子中的所有视角词
 def getViews(comment,NormaleViews,SpecialViews):
-    temp_comment=comment
-    views=[]
+    views = []
+    if(comment.__contains__('北京汽车') and  not comment.__contains__('北京汽车绅') and not comment.__contains__('北京汽车B')):
+        views.append('北京')
+    if (comment.__contains__('东南汽车') == False or comment.__contains__('上汽通用汽车别克')==False or comment.__contains__('众泰汽车')==False):
+        comment = comment.replace('汽车', '')
+    temp_comment = comment
     #得到一些特殊视角词,例如小夏利：小夏 夏利 应该是夏利
+    if ('小' in comment or '大' in comment or '比' in comment):
+        views,comment = getSpecialV(views,comment)
     # 处理中文的歧义视角
     comment = preNormalViews(comment)
     # 找出普通视角词
@@ -261,8 +261,6 @@ def getViews(comment,NormaleViews,SpecialViews):
         if (comment.__contains__(view) == True):
             views.append(view)
             comment = comment.replace(view, '')
-    if ('小' in comment or '大' in comment or '比' in comment):
-        views,comment = getSpecialV(views,comment)
     # 处理含数字的歧义视角
     comment=preSpecialViews(comment)
     temp_views = jieba.cut(comment)
@@ -274,26 +272,89 @@ def getViews(comment,NormaleViews,SpecialViews):
             if (len(re.findall('^[a-zA-Z]+$',word))>0):
                 for view in getSpecilaView(word, SpecialViews):
                     views.append(view)
-    views = list(set(views))
-    if('风光' in views or '标志' in views or '阳光' in views or '发现' in views):
-        views=getAmbiousViews(views,temp_comment)
+    if('风光' in comment or '标志' in comment or '阳光' in comment or '发现' in comment or '通用'in comment):
+        views=getAmbiousViews(views,comment)
     views=removeSpecialViews(views,temp_comment)
+    views = list(set(views))
+    for view in views:
+        if(view not in temp_comment):
+            views.remove(view)
     return views
 
 #得到含有视角词的句子以及无视角词的句子
 def getSentence(view,views,lines):
     strour = ''
-    temp = 0
-    for j in range(0, len(lines)):
-        temp_len = 0
-        if (lines[j].__contains__(view)):
-            strour += lines[j]
-            temp = j
-        elif (strour!= ''):
-            for s in range(0, len(views)):
-                if ((lines[j].__contains__(views[s])) == False):
-                    temp_len += 1
-            if (temp_len == len(views) and j > temp):
+    if(len(views)==1):
+        for j in range(0, len(lines)):
+            strour+=lines[j]
+    else:
+        temp = 0
+        for j in range(0, len(lines)):
+            temp_len = 0
+            if (lines[j].__contains__(view)):
                 strour += lines[j]
                 temp = j
+            elif (strour != ''):
+                for s in range(0, len(views)):
+                    if ((lines[j].__contains__(views[s])) == False):
+                        temp_len += 1
+                if (temp_len == len(views) and j > temp):
+                    strour += lines[j]
+                    temp = j
     return strour
+
+#得到按距离切分好的句子，按照两个视角的中点来切分视角，不考虑标点符号
+def getAllSentence(views,str):
+    x_cache = {}
+    if(len(views)==1):
+        x_cache[views[0]]=str
+    else:
+        marker_set = ['☢', '☣', '☤', '☥', '☦', '☧', '☨', '☩', '☪', '☫', '☬', '☭', '☮', '☯', '☰', '*', '＊', '✲', '✿',
+                      '❁', '♚', '☸', '♕', '♗', '♝', '♘', '♞', '♖', '♜', '♟', '✈', '〠', '۩', '♨', 'ღ', '✪', '✄',
+                      '✁',
+                      '☂', '☄', '☇']  # 用来标记视角的占位
+        pointer = 0
+        cache = {}
+        for view in views:
+            cache[marker_set[pointer]] = view
+            str = str.replace(view, marker_set[pointer])  # 先识别分词器无法区分的视角，再用特殊标记标记出来
+            pointer += 1
+        StopWords = load_dict('data/StopWords.txt')
+        words_list = word_filter(str, StopWords)
+        view_index = []  # 找出视角词出现的下标
+        foo = 0
+        for word in words_list:
+            if (cache.get(word) is not None):
+                view_index.append(foo)
+            foo += 1
+        divide_index = []  # 计算出分隔点的下标
+        for I in range(len(view_index) - 1):
+            divide_index.append(math.ceil((view_index[I] + view_index[I + 1]) / 2))
+        # 判断每一段应该是哪个情感，然后统计
+        word_cache =''
+        words_list_pointer = 0  # 记录处理到评论中的哪个词了
+        for I in divide_index:
+            while words_list_pointer <= I:
+                word_cache+=words_list[words_list_pointer]
+                words_list_pointer += 1
+            for view in list(cache):
+                if view in word_cache:
+                    if x_cache.get(view) is None:
+                        x_cache[cache[view]] = word_cache
+                    else:
+                        x_cache[cache[view]] += word_cache
+            word_cache =''
+        while words_list_pointer < len(words_list):
+            word_cache += words_list[words_list_pointer]
+            words_list_pointer += 1
+        for view in list(cache):
+            if view in word_cache:
+                if x_cache.get(view) is None:
+                    x_cache[cache[view]] = word_cache
+                else:
+                    x_cache[cache[view]] += word_cache
+    return x_cache
+
+#得到视角词对应的按距离切分后得到的句子
+def getSenten(x_cache,view):
+    return x_cache[view]
