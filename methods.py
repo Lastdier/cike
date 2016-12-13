@@ -32,7 +32,6 @@ def getInverseSen(views, line):
 def getCompSentence(views, line):
     comviews = []
     for view in views:
-
         s1 = '与' + view + '相比'
         s2 = '比' + view
         s3 = '超越' + view
@@ -48,6 +47,7 @@ def listTostring(list):
     outStr = ''
     for word in list:
         outStr += word
+        outStr+=' '
     return outStr
 
 def getPosseg(string,StopWords):
@@ -214,12 +214,13 @@ def getSpecilaView(str,SpecialViews):
                 break
     return views
 
-def search_features_and_wight(word_list, features_list):
+def search_features_and_wight(this_snownlp_result,word_list, features_list):
     num_of_features = len(features_list)
-    result = [0.] * num_of_features
+    result = [0.] * (num_of_features+1)
     for word in word_list:
         if(features_list.get(word)is not None):
             result[features_list[word][0]] += float(features_list[word][1])
+    result[num_of_features]=this_snownlp_result
     return result
 
 # 加载字典
@@ -234,8 +235,11 @@ def get_features(dict_name, k):
             break
         l1 = line.strip()
         this_line = l1.split('\t')
+        if not len(this_line) == 2:
+            continue
         features[this_line[0]]= [count,this_line[1]]
         count += 1
+    print(len(features))
     return features
 
 #得到句子中的所有视角词
@@ -297,59 +301,3 @@ def getSentence(view,views,lines):
                     strour += lines[j]
                     temp = j
     return strour
-
-#得到按距离切分好的句子，按照两个视角的中点来切分视角，不考虑标点符号
-def getAllSentence(views,str):
-    x_cache = {}
-    if(len(views)==1):
-        x_cache[views[0]]=str
-    else:
-        marker_set = ['☢', '☣', '☤', '☥', '☦', '☧', '☨', '☩', '☪', '☫', '☬', '☭', '☮', '☯', '☰', '*', '＊', '✲', '✿',
-                      '❁', '♚', '☸', '♕', '♗', '♝', '♘', '♞', '♖', '♜', '♟', '✈', '〠', '۩', '♨', 'ღ', '✪', '✄',
-                      '✁',
-                      '☂', '☄', '☇']  # 用来标记视角的占位
-        pointer = 0
-        cache = {}
-        for view in views:
-            cache[marker_set[pointer]] = view
-            str = str.replace(view, marker_set[pointer])  # 先识别分词器无法区分的视角，再用特殊标记标记出来
-            pointer += 1
-        StopWords = load_dict('data/StopWords.txt')
-        words_list = word_filter(str, StopWords)
-        view_index = []  # 找出视角词出现的下标
-        foo = 0
-        for word in words_list:
-            if (cache.get(word) is not None):
-                view_index.append(foo)
-            foo += 1
-        divide_index = []  # 计算出分隔点的下标
-        for I in range(len(view_index) - 1):
-            divide_index.append(math.ceil((view_index[I] + view_index[I + 1]) / 2))
-        # 判断每一段应该是哪个情感，然后统计
-        word_cache =''
-        words_list_pointer = 0  # 记录处理到评论中的哪个词了
-        for I in divide_index:
-            while words_list_pointer <= I:
-                word_cache+=words_list[words_list_pointer]
-                words_list_pointer += 1
-            for view in list(cache):
-                if view in word_cache:
-                    if x_cache.get(view) is None:
-                        x_cache[cache[view]] = word_cache
-                    else:
-                        x_cache[cache[view]] += word_cache
-            word_cache =''
-        while words_list_pointer < len(words_list):
-            word_cache += words_list[words_list_pointer]
-            words_list_pointer += 1
-        for view in list(cache):
-            if view in word_cache:
-                if x_cache.get(view) is None:
-                    x_cache[cache[view]] = word_cache
-                else:
-                    x_cache[cache[view]] += word_cache
-    return x_cache
-
-#得到视角词对应的按距离切分后得到的句子
-def getSenten(x_cache,view):
-    return x_cache[view]

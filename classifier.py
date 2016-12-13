@@ -97,6 +97,8 @@ def create_training_set(num_of_train):
             continue
         this_comment_id = content[0]
         this_comment = content[1]
+        #if (len(re.findall(r'[。，,；;]', this_comment)) == 0 and not this_comment.__contains__('<')):
+            #continue
         if label_ref.get(this_comment_id) is None:
             continue
         else:
@@ -105,6 +107,10 @@ def create_training_set(num_of_train):
         views=[]
         for s in range(view_count):
             views.append(view_list[s][0])
+        compViews = getCompSentence(views,this_comment)
+        comviews = getInverseSen(views,this_comment)
+        if(len(compViews)>0 or len(comviews)>0):
+            continue
         this_lines = re.split('。|,|，|:|：|；|\n', this_comment)
         for this_view, motion in view_list:
             strour = getSentence(this_view,views,this_lines)
@@ -176,7 +182,7 @@ def create_training_set(num_of_train):
 TOTAL_NUMBER_OF_TRAIN = 14533
 NUM_OF_TRAIN = 10000
 TEST_FILE = 'Train.csv'
-OUTPUT_FILE = 'result.csv'
+OUTPUT_FILE = 'GBDT_result.csv'
 itime = time.time()
 
 # 加载词典
@@ -201,7 +207,7 @@ line_count = 0
 
 # 读取snownlp的结果
 sentiment_dict = {}
-test_sentiment = open('data/TrainSentiment.csv', encoding='utf-8')
+test_sentiment = open('data/TestSentiment.csv', encoding='utf-8')
 sentiment_data = test_sentiment.readlines()
 test_sentiment.close()
 for jjj in sentiment_data:
@@ -213,8 +219,10 @@ for jjj in sentiment_data:
 
 for line in test_data:
     line_count += 1
+    '''
     if not line_count > NUM_OF_TRAIN:
         continue
+    '''
     l1 = line.strip()
     l2 = l1.split('\t')
     if not len(l2) == 2:
@@ -304,7 +312,7 @@ for line in test_data:
         test_x = [word_vec]
         test_y = clf.predict(test_x)
         if (int(test_y[0]) == 0):
-            if(sentence.__contains__('召回') or sentence.__contains__('自燃')):
+            if (sentence.__contains__('召回') or sentence.__contains__('自燃')):
                 result_file.write('%s,%s,%s\n' % (comment_id, views[i], 'neg'))
             else:
                 result_file.write('%s,%s,%s\n' % (comment_id, views[i], 'neu'))
